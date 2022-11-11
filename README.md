@@ -1,3 +1,3 @@
 # PROJECT-65
 # sawaddeekab eiei 65070088
-# say hi 65070001 (finaly coming)
+# say hi 65070001 (finally coming)
