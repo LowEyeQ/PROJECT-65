@@ -1,6 +1,7 @@
 """MAIN"""
 def main():
     """MAIN"""
-    vbbvbv
-    
+    vbbvbv = input()
+    hhhh = input()
+       
 main()
