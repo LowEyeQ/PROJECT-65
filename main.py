@@ -5,4 +5,5 @@ def main():
     hhhh = input()
     ' hello everyone '
     ' hiiiiiiiiiiiii '
+    ' ปวดหลัง '
 main()
