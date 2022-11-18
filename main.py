@@ -6,4 +6,5 @@ def main():
     test = 'เมื่อไรจะได้'
     test2 = 'dai mai'
     test3 = "eoeo"
+    correct = 'say hi'
 main()
