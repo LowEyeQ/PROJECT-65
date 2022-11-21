@@ -1,5 +1,11 @@
 """MAIN"""
 def main():
     """MAIN"""
-    num = input()
+    vbbvbv = input()
+    hhhh = input()
+    test = 'เมื่อไรจะได้'
+    test2 = 'dai mai'
+    test3 = "eoeo"
+    test4 = "E"
+    test = 4 
 main()
