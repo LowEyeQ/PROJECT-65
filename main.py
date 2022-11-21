@@ -8,4 +8,5 @@ def main():
     test3 = "eoeo"
     test4 = "E"
     test = 4 
+    num = input()
 main()
