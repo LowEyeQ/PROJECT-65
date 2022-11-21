@@ -9,4 +9,5 @@ def main():
     test4 = "E"
     test = 4 
     num = input()
+    new = input()
 main()
