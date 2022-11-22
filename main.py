@@ -19,4 +19,5 @@ def main():
     kkkuy = io
     dajg;dkpgk[d]
     xsak;'csdlfsKDF:Kd'
+    teste = 0
 main()
