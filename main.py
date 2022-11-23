@@ -10,11 +10,10 @@ def main():
     test2 = 'dai mai'
     test3 = "eoeo"
     test4 = "E"
-    test = 4 
+    test = 4
     num = input()
     timey = 12
     new = input()
     test1 = "agiain"
-    hello world
-    kkkuy = io
+    "hello world"
 main()
