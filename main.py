@@ -16,4 +16,9 @@ def main():
     new = input()
     test1 = "agiain"
     "hello world"
+    hello world
+    kkkuy = io
+    dajg;dkpgk[d]
+    xsak;'csdlfsKDF:Kd'
+    teste = 0
 main()
