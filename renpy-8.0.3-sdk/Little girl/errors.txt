@@ -1,0 +1,26 @@
+﻿I'm sorry, but errors were detected in your script. Please correct the
+errors listed below, and try again.
+
+
+File "game/check.rpy", line 29: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
+    'อาจารย์'
+             ^
+
+File "game/check.rpy", line 93: expected statement.
+    'Toxic Level Up':
+                    ^
+
+File "game/check.rpy", line 125: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
+    menu:
+    ^
+
+File "game/check.rpy", line 248: expected statement.
+    ..ก๊อก ก๊อก..
+    ^
+
+File "game/script.rpy", line 218: expected statement.
+    'Toxic Level Up':
+                    ^
+
+Ren'Py Version: Ren'Py 8.0.3.22090809
+Mon Nov 28 21:03:56 2022
