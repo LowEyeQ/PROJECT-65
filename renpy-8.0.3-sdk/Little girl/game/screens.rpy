@@ -285,50 +285,9 @@ style quick_button_text:
 ## This screen is included in the main and game menus, and provides navigation
 ## to other menus, and to start the game.
 
-screen navigation():
+# screen navigation():
 
-    vbox:
-        style_prefix "navigation"
 
-        xpos gui.navigation_xpos
-        yalign 0.5
-
-        spacing gui.navigation_spacing
-
-        if main_menu:
-
-            textbutton _("Start") action Start()
-
-        else:
-
-            textbutton _("History") action ShowMenu("history")
-
-            textbutton _("Save") action ShowMenu("save")
-
-        textbutton _("Load") action ShowMenu("load")
-
-        textbutton _("Preferences") action ShowMenu("preferences")
-
-        if _in_replay:
-
-            textbutton _("End Replay") action EndReplay(confirm=True)
-
-        elif not main_menu:
-
-            textbutton _("Main Menu") action MainMenu()
-
-        textbutton _("About") action ShowMenu("about")
-
-        if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
-
-            ## Help isn't necessary or relevant to mobile devices.
-            textbutton _("Help") action ShowMenu("help")
-
-        if renpy.variant("pc"):
-
-            ## The quit button is banned on iOS and unnecessary on Android and
-            ## Web.
-            textbutton _("Quit") action Quit(confirm=not main_menu)
 
 
 style navigation_button is gui_button
@@ -356,23 +315,94 @@ screen main_menu():
     add gui.main_menu_background
 
     ## This empty frame darkens the main menu.
-    frame:
-        style "main_menu_frame"
+    # frame:
+    #     style "main_menu_frame"
 
     ## The use statement includes another screen inside this one. The actual
     ## contents of the main menu are in the navigation screen.
-    use navigation
+    # use navigation
+
+    fixed:
+        style_prefix "navigation"
+
+        # xpos gui.navigation_xpos
+        # yalign 0.5
+
+        spacing gui.navigation_spacing
+
+        if main_menu:
+
+            # textbutton _("Start") action Start()
+            imagebutton auto "gui/mm_start_%s.png":
+                    xpos 93
+                    ypos 38
+                    focus_mask True
+                    action Start()
+                    hovered [ Play("sound", "audio/click4.wav") ]
+
+        else:
+
+            textbutton _("History") action ShowMenu("history")
+
+            textbutton _("Save") action ShowMenu("save")
+
+        # textbutton _("Load") action ShowMenu("load")
+        imagebutton auto "gui/mm_save_%s.png":
+                xpos 64
+                ypos 617
+                focus_mask True
+                action ShowMenu("load")
+                hovered [ Play("sound", "audio/click2.mp3") ]
+
+
+
+        # textbutton _("Preferences") action ShowMenu("preferences")
+        imagebutton auto "gui/mm_options_%s.png":
+                xpos 95
+                ypos 389
+                focus_mask True
+                action ShowMenu("preferences")
+                hovered [ Play("sound", "audio/click3.wav") ]
+
+
+
+        if _in_replay:
+
+            textbutton _("End Replay") action EndReplay(confirm=True)
+
+        elif not main_menu:
+
+            textbutton _("Main Menu") action MainMenu()
+
+        # textbutton _("About") action ShowMenu("about")
+
+        # if renpy.variant("pc") or (renpy.variant("web") and not renpy.variant("mobile")):
+
+        #     ## Help isn't necessary or relevant to mobile devices.
+        #     textbutton _("Help") action ShowMenu("help")
+
+        if renpy.variant("pc"):
+
+            ## The quit button is banned on iOS and unnecessary on Android and
+            ## Web.
+            # textbutton _("Quit") action Quit(confirm=not main_menu)
+            imagebutton auto "gui/mm_exit_%s.png":
+                    xpos 47
+                    ypos 864
+                    focus_mask True
+                    action Quit(confirm=not main_menu)
+                    hovered [ Play("sound", "audio/click6.mp3") ]
 
     if gui.show_name:
 
         vbox:
             style "main_menu_vbox"
 
-            text "[config.name!t]":
-                style "main_menu_title"
+            # text "[config.name!t]":
+            #     style "main_menu_title"
 
-            text "[config.version]":
-                style "main_menu_version"
+            # text "[config.version]":
+            #     style "main_menu_version"
 
 
 style main_menu_frame is empty
@@ -467,7 +497,7 @@ screen game_menu(title, scroll=None, yinitial=0.0):
 
                     transclude
 
-    use navigation
+    # use navigation
 
     textbutton _("Return"):
         style "return_button"
