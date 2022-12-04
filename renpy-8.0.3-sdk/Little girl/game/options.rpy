@@ -13,6 +13,7 @@
 ## The _() surrounding the string marks it as eligible for translation.
 
 define config.name = _("Little girl")
+define config.mouse = { 'default' : [ ('gui/Cursor-icon.png', 0, 0)] }
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
