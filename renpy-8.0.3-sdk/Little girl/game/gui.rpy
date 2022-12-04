@@ -48,21 +48,20 @@ define gui.muted_color = u'#3d5166'
 define gui.hover_muted_color = u'#5b7a99'
 
 ## The colors used for dialogue and menu choice text.
-define gui.text_color = u'#ffffff'
-define gui.interface_text_color = u'#ffffff'
+define gui.text_color = u'#fcb10f'
+define gui.interface_text_color = u'#fcb10f'
 
 
 ## Fonts and Font Sizes ########################################################
 
 ## The font used for in-game text.
-define gui.text_font = "LayijiSarangheyo.ttf"
-
+define gui.text_font = "Biscuit.ttf"
 ## The font used for character names.
-define gui.name_text_font = "LayijiSarangheyo.ttf"
+define gui.name_text_font = "Biscuit.ttf"
 
 
 ## The font used for out-of-game text.
-define gui.interface_text_font = "LayijiSarangheyo.ttf"
+define gui.interface_text_font = "Biscuit.ttf"
 
 
 ## The size of normal dialogue text.
