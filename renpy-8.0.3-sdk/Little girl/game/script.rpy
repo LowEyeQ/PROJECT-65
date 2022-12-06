@@ -8,6 +8,132 @@ define r = Character('Conception')
 define ch = Character("Teacher cho")
 define m = Character("Mother")
 
+#image
+image r_normal:
+    "r_normal1.png"
+    pause 0.4
+    "r_normal2.png"
+    pause 0.4
+    repeat
+
+image r_before_black = "r_before_tranform.png"
+
+image r_lookup:
+    "r_look_up.png"
+    pause 0.4
+    "r_look_up2.png"
+    pause 0.4
+    repeat
+
+image r_explain:
+    "r_explain1.png"
+    pause 0.4
+    "r_explain2.png"
+    pause 0.4
+    repeat
+
+image r_repressed:
+    "r_repressed1.png"
+    pause 1
+    "r_repressed2.png"
+    pause 0.5
+
+image r_fashion_glasses = "r_fashion_sunglasses.png"
+
+image r_fashion = "r_fashion.png"
+
+image r_fireeye:
+    "r_fireeyes1.png"
+    pause 0.4
+    "r_fireeyes2.png"
+    pause 0.4
+    repeat
+
+image r_shake:
+    "r_shake_head1.png"
+    pause 0.2
+    "r_shake_head2.png"
+    pause 0.2
+    "r_shake_head3.png"
+    pause 0.2
+    "r_shake_head4.png"
+    pause 0.2
+    repeat
+
+image r_fallear:
+    "r_fallear1.png"
+    pause 0.4
+    "r_fallear2.png"
+    pause 0.4
+    repeat
+
+image r_clock:
+    "r_clock1.png"
+    pause 0.2
+    "r_clock2.png"
+    pause 0.2
+    "r_clock3.png"
+    pause 0.2
+    "r_clock4.png"
+    pause 0.2
+    "r_clock5.png"
+    pause 0.2
+    repeat
+
+image r_spirit_out = "r_oh.png"
+
+image r_fallear:
+    "r_fallear1.png"
+    pause 0.4
+    "r_fallear2.png"
+    pause 0.4
+    repeat
+
+image r_ambulance:
+    "r_ambulance1.png"
+    pause 0.4
+    "r_ambulance2.png"
+    pause 0.4
+    "r_ambulance3.png"
+    pause 0.4
+    repeat
+
+image r_swing:
+    "r_swing1.png"
+    pause 0.4
+    "r_swing2.png"
+    pause 0.4
+    "r_swing3.png"
+    pause 0.4
+    repeat
+
+image r_cry_big = "r_cry.png"
+
+image r_theft = "r_theft.png"
+
+image r_scared = "r_scared.png"
+
+image r_cool = "r_cool.png"
+
+image r_health = "r_health.png"
+
+image r_coffin:
+    "r_coffin1.png"
+    pause 0.4
+    "r_coffin2.png"
+    pause 0.4
+    repeat
+
+image r_after_black = "r_after_tranform.png"
+
+image r_normal_big:
+    "r_normal_big1.png"
+    pause 0.4
+    "r_normal_big2.png"
+    pause 0.4
+    repeat
+
+image r_rip = "r_rip.png"
 
 # The game starts here.
 
