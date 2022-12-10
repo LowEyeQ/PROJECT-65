@@ -1,48 +1,48 @@
-Sun Dec  4 13:32:48 2022
+Sat Dec 10 21:39:22 2022
 Windows-10-10.0.22000
 Ren'Py 8.0.3.22090809
  
 
-Bootstrap to the start of init.init took 0.04s
+Bootstrap to the start of init.init took 0.05s
 Early init took 0.00s
 Loader init took 0.03s
-Loading error handling took 0.02s
-Loading script took 0.34s
+Loading error handling took 0.03s
+Loading script took 0.39s
 Loading save slot metadata. took 0.00s
 Loading persistent took 0.00s
 Set script version to: None (alternate path)
-Running init code took 0.27s
-Loading analysis data took 0.01s
-Analyze and compile ATL took 0.01s
+Running init code took 0.46s
+Loading analysis data took 0.02s
+Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Dump and make backups. took 0.00s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.02s
+Initial gc. took 0.03s
 DPI scale factor: 1.250000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: Disabled thread optimizations.
-Creating interface object took 0.17s
+Creating interface object took 0.30s
 Cleaning stores took 0.00s
-Init translation took 0.03s
+Init translation took 0.05s
 Build styles took 0.00s
-Load screen analysis took 0.02s
+Load screen analysis took 0.04s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.04s
+Prepare screens took 0.07s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
-Running _start took 0.01s
+Running _start took 0.00s
 Performance test:
-Interface start took 0.08s
+Interface start took 0.12s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
 Vendor: "b'NVIDIA Corporation'"
-Renderer: b'NVIDIA GeForce RTX 3050 Ti Laptop GPU/PCIe/SSE2'
-Version: b'4.6.0 NVIDIA 513.38'
+Renderer: b'NVIDIA GeForce GTX 1650/PCIe/SSE2'
+Version: b'4.6.0 NVIDIA 526.98'
 Display Info: None
-Screen sizes: virtual=(800, 600) physical=(1304, 978) drawable=(1304, 978)
+Screen sizes: virtual=(800, 600) physical=(746, 560) drawable=(746, 560)
 Maximum texture size: 4096x4096

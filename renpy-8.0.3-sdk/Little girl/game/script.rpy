@@ -67,6 +67,22 @@ image r_fallear:
     pause 0.4
     repeat
 
+image r_tranform:
+    "r_normal1.png"
+    pause 0.3
+    "r_before_tranform.png"
+    pause 0.2
+    "r_normal1.png"
+    pause 0.1
+    "r_before_tranform.png"
+    pause 0.1
+    "r_normal1.png"
+    pause 0.1
+    "r_after_tranform.png"
+    pause 0.1
+    "r_normal_big1.png"
+    pause 0.1
+
 image r_clock:
     "r_clock1.png"
     pause 0.2
@@ -105,6 +121,15 @@ image r_swing:
     pause 0.4
     "r_swing3.png"
     pause 0.4
+    repeat
+
+image r_swing_speed:
+    "r_swing1.png"
+    pause 0.1
+    "r_swing2.png"
+    pause 0.1
+    "r_swing3.png"
+    pause 0.1
     repeat
 
 image r_cry_big = "r_cry.png"
