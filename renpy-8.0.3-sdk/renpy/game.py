@@ -425,3 +425,4 @@ if False:
     interface = renpy.display.core.Interface()
     log = renpy.python.RollbackLog()
     preferences = renpy.preferences.Preferences()
+    #test
