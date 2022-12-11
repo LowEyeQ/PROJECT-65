@@ -835,7 +835,7 @@ label start3:
                     r 'ดูท่าทีเหงาหงอยนั่นสิ ไม่เป็นไรนะฉันจะอยู่กับเธอเอง'
                     $ score += 1
     #play music "audio/start label music audio.mp3" loop volume 0.25
-    if score >== 1:
+    if score >= 1:
         play sound "audio/label 2.mp3" fadein 7.0
         menu:
             'Toxic Level Up':
