@@ -402,7 +402,7 @@ label start:
     stop music fadeout 0.5
             
 label start2:
-    #play music "audio/label 2.mp3" volume 0.1 fadein 2.0
+    play music "audio/start label music audio.mp3" loop volume 0.1
     $ score = 0
     scene bg_bus_stop
     with fade
