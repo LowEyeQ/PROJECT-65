@@ -276,6 +276,7 @@ label start:
     j "ถ้างั้นแล้ว ฉันควรจะทำทรงอะไรดีล่ะคะ"
     menu:
         "มัดรวบ":
+            play sound 'audio/girl laugh.mp3' volume 0.5
             hide r_lookup
             with dissolve
             show r_fashion
@@ -371,6 +372,7 @@ label start:
                     j "อะ อ่า.. โอเคค่ะ ลอนผมก็ลอนผม"
                     j "โอเคฉันลอนผมเลยแล้วกัน"
         "หนีบผม":
+            play sound 'audio/girl laugh.mp3' volume 0.5
             hide r_lookup
             with dissolve
             show r_fashion_glasses
