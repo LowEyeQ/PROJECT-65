@@ -338,7 +338,7 @@ screen main_menu():
                     ypos 38
                     focus_mask True
                     action Start()
-                    hovered [ Play("sound", "audio/click4.wav") ]
+                    hovered [ Play("sound", "audio/click2.mp3") ]
 
         else:
 
@@ -352,7 +352,7 @@ screen main_menu():
                 ypos 617
                 focus_mask True
                 action ShowMenu("load")
-                hovered [ Play("sound", "audio/click2.mp3") ]
+                hovered [ Play("sound", "audio/click3.wav") ]
 
 
 
@@ -362,7 +362,7 @@ screen main_menu():
                 ypos 389
                 focus_mask True
                 action ShowMenu("preferences")
-                hovered [ Play("sound", "audio/click3.wav") ]
+                hovered [ Play("sound", "audio/click5.mp3") ]
 
 
 
