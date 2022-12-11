@@ -259,6 +259,7 @@ label start:
     show r_lookup
     with zoomin
     # with dissolve
+    play sound 'audio/magic.mp3' volume 0.5
     'กระต่ายตัวนี้เป็นความคิดในใจส่วนหนึ่งของJoseph'
     r "นี่ เธอคิดดีแล้วหรอ ถักเปียหน่ะมันทั้งยุ่งยาก แบ่งช่อก็ยาก มัดตึงมากก็ไม่ได้เพราะมันจะทำให้เธอผมร่วง" #r_explain
     hide r_lookup
