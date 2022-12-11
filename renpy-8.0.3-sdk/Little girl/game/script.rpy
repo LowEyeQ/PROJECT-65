@@ -163,10 +163,10 @@ image r_rip = "r_rip.png"
 
 image hair_curler = 'bg_hair_curler.png'
 
-image r_smile_angry:
-    "r_smile_angry1.png"
+image r_smile:
+    "r_smile1.png"
     pause 0.4
-    "r_smile_angry2.png"
+    "r_smile2.png"
     pause 0.4
     repeat
 
