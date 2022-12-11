@@ -497,8 +497,10 @@ label start2:
                         hide r_tranform
                         with dissolve
                         show r_coffin
+                        play sound "audio/funeral dance.mp3" volume 0.25
                         r 'แรงพุ่ง แรงเหวี่ยง แรงเบรก จะทำให้เธอกลิ้งหลุดออกจากหน้าต่างก็ได้นะ ยิ่งตัวเล็กๆอยู่ ไปสวรรค์ได้เลย'
                         r 'ถ้าแล้วถ้าไม่ใช่ภัยจากอุบัติเหตุ เธออาจจะเจอภัยจากมนุษย์ด้วยกันเองก็ได้นะ'
+                        stop sound
                 menu:
                     'มีโรคจิตมาลวนลาม':
                         hide r_coffin
@@ -520,8 +522,10 @@ label start2:
                         hide r_theft
                         with dissolve
                         show r_rip
+                        play sound "audio/funeral dance.mp3" volume 0.25
                         r 'แล้วถ้าเหตุการณ์ร้ายแรง เธออาจจะโดนมีดจ้วง ไม่ก็โดนปาดคอ'
                         # damage joseph
+                stop sound
                 hide r_scared
                 hide r_rip
                 with dissolve
