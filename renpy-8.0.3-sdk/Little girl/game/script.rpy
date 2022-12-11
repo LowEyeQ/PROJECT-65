@@ -664,8 +664,12 @@ label start3:
     j 'ฟู่ว เหนื่อยแต่ก็มาทันเวลาด้วยล่ะค่ะ'#show j_normal part3
     r 'เก่งมากสาวน้อย เข้าห้องเรียนกันเถอะ'
     #classroom
-    scene bg_classroom_all
+    scene bg_classroom_bg
     with fade
+    show j_normal part3
+    with dissolve
+    show r_normal
+    with dissolve
     ch 'นักเรียนจ๊ะ คะแนนสอบย่อยครั้งที่แล้วออกแล้วนะจ๊ะ'
     j 'เอ๊ะ!'
     ch 'พอครูเรียกชื่อแล้วก็ออกมารับนะจ๊ะ เด็กชายสมชาย...เด็กหญิงโฟกัส'
@@ -732,6 +736,9 @@ label start3:
             show r_lookup
             r 'เธออ่านใจเขาได้หรอ จะบอกอะไรให้นะ คนเป็นอาจารย์น่ะ เขาชอบและใส่ใจกับเด็กที่เรียนเก่งเกรดดี'
             r 'หลังจากนี้เธอคงได้รับสายตาดูแคลนจากเขาแล้วล่ะ ระวังตอนเช็คชื่อให้ดีนะหรือเขาจะทำเป็นไม่เห็นชื่อเธอกันนะ'
+            hide j_talk wit rabbit part3
+            with dissolve
+            show j_relax part3
             j 'ฉันเชื่อว่าอาจารย์ไม่ใจร้ายขนาดนั้นหรอกค่ะ เขามีบทบาทที่จะทำให้พวกเราเป็นคนที่ดีขึ้น เราต้องให้ใจกับเขาด้วย'#j_ralax part3
             r 'ตามใจเธอก็แล้วกัน'
             j 'ตั้งใจเรียนกันเถอะค่ะ'
@@ -754,8 +761,14 @@ label start3:
             with dissolve
             show r_swing
             r 'และงานกลุ่มก็จะไม่มีใครเอาเธอมาอยู่ด้วย!!'
-            r 'และไม่มีที่ไหนรับคนคะแนนน้อยเข้าทำงานแน่นอนนนนนน'#j_start scared part3 
-            j 'ฮือ นี่มันทำฉันรู้สึกแย่จนปวดท้องไปหมดแล้ว' #j_scared that it ppb happend part3 
+            hide j_talk wit rabbit part3
+            with dissolve
+            show j_start scared part3
+            r 'และไม่มีที่ไหนรับคนคะแนนน้อยเข้าทำงานแน่นอนนนนนน'#j_start scared part3
+            hide j_start scared part3
+            with dissolve
+            show j_scared that it ppb happend part3
+            j 'ฮือ นี่มันทำฉันรู้สึกแย่จนปวดท้องไปหมดแล้ว' #j_scared that it ppb happend part3
             r 'สาวน้อยคนนี้จะเป็นที่จดจำในงานเลี้ยงรุ่น'
             $ score += 1
         'ครอบครัว':
@@ -778,6 +791,9 @@ label start3:
             r 'ไม่อยากบอกก็ไม่ต้องบอกสิ ไม่ใช่เรื่องที่ต้องกังวลเลย'
             j 'ทำยังไงดีล่ะคะ'
             r 'ทำลายมันสิ เผามัน ปั้นกลมๆแล้วโยนลงน้ำ'
+            hide j_talk wit rabbit part3
+            with dissolve
+            show j_start scared part3
             j 'ฉันจะ....ไม่ ฉันจะไม่ทำอย่างนั้นค่ะ พ่อแม่คือคนที่เข้าใจฉันที่สุด'#j_start scared part3
             hide r_smile
             with dissolve
@@ -797,6 +813,9 @@ label start3:
                     hide r_aunt
                     show r_smile
                     with dissolve
+                    hide j_start scared part3
+                    with dissolve
+                    show j_relax part3
                     #j_ralax part3
                     j 'ขอแค่พ่อกับแม่เข้าใจฉันก็พอแล้วค่ะ บางทีเราไม่จำเป็นต้องใส่ใจว่าคนอื่นจะมองยังไง'
                     hide r_smile
@@ -812,6 +831,9 @@ label start3:
                     hide r_aunt
                     show r_spirit_out
                     with dissolve
+                    hide j_start scared part3
+                    with dissolve
+                    show j_scared that it ppb happend part3
                     j 'พวกท่านต้องไม่เข้าใจแน่ค่ะ'#j_scared that it ppb happend part3 
                     r 'เราแค่ป้องกันกรณีที่ร้ายแรงที่สุด คือพวกเขาจะห้ามไม่ให้เธอทำงานอดิเรกอีกเลย'
                     r 'ไม่มีนิยายให้เธออ่าน ทุกอย่างถูกกีดกัน เพื่อให้เธอมีเวลาโฟกัสกับเรื่องการเรียนให้มากที่สุด'
@@ -823,20 +845,31 @@ label start3:
             show r_normal
             j 'เขาเป็นคนดีนะคะ ฉันเคยเห็นเขาช่วยติวให้เพื่อนๆด้วย'
             r 'แสดงว่าเขาต้องเป็นคนที่เก่งมากๆ เธอหมดโอกาสแล้วล่ะ'
+            hide j_talk wit rabbit part3
+            with dissolve
+            show j_start scared part3 
             #j_start scared part3 
             menu:
                 'พลิกวิกฤตให้เป็นโอกาส':
-                    #j_ralax part3
+                    hide j_start scared part3
                     with dissolve
-                    show r_look_up
+                    show j_relax part3
+                    #j_ralax part3
+                    hide r_normal
+                    with dissolve
+                    show r_lookup
                     j 'ไม่หรอกค่ะ ไม่แน่ฉันอาจจะขอเข้าร่วมการติวในครั้งหน้าด้วย'
                     r 'เพ้อฝันจริงๆเลยยัยเด็กคนนี้'
                     stop sound
                     $ score += 0
                 'ตัดใจ':
-                    #j_scared that it ppb happen part3 
+                    hide r_normal
                     with dissolve
                     show r_behind
+                    hide j_start scared part3
+                    with dissolve
+                    show j_scared that it ppb happend part3
+                    #j_scared that it ppb happen part3
                     r 'ดูท่าทีเหงาหงอยนั่นสิ ไม่เป็นไรนะฉันจะอยู่กับเธอเอง'
                     $ score += 1
     #play music "audio/start label music audio.mp3" loop volume 0.25
@@ -844,19 +877,28 @@ label start3:
         play sound "audio/label 2.mp3" fadein 7.0
         menu:
             'Toxic Level Up':
-                #play sound "audio/rabbit transform.mp3" volume 0.5
+                play sound "audio/rabbit transform.mp3" volume 0.5
+                hide r_lookup
+                hide r_swing
+                hide r_behind
+                hide r_spirit_out
+                with zoominout
+                pause(0.5)
+                show r_tranform
+                with zoominout
+                with hpunch
+                with vpunch
+                pause(0.5)
                 r 'ฉันฟันธงเลยว่าเธอคงอยากจะลาออกแน่นอน เป็นสาวน้อยที่แย่จังเลยน้าาา'
-                with dissolve
+                hide r_tranform
                 show r_smile_angry
+                with dissolve
                 r 'เงินค่าเทอมตรงนั้นสามารถเอาไปใช้ประโยชน์ได้หลายอย่างแต่เธอดันทำให้มันเสียเปล่าซะได้ ตัดสินใจผิดพลาดจริงๆ'
                 hide r_smile_angry
                 with dissolve
                 show r_scared
                 r 'ไม่ใช่เงินที่หาเธอมาด้วยตัวเองอีก ได้ยินมั๊ยว่าเงินน่ะ! เป็นของมีค่าที่ถูกเธอผลาญไปอย่างเปล่าประโยชน์'
                 r 'อนาคตคงเธอมืดบอด ไร้จุดหมายและมีปลายทางที่เตียงนอนกับหมอนเน่า ฟังดูดีหรอ ไม่เลย เธอจะกลายเป็นตัวไร้ประโยชน์ในบ้าน'
-                hide r_scared
-                with dissolve
-                show r_scared
                 r 'อยู่ในห้องตลอดไป!!!!'
                 stop sound fadeout 2.0
                 # show j_dead part3
@@ -866,7 +908,7 @@ label start3:
         #play music "audio/start label music audio.mp3" loop volume 0.25
         jump start4
 label finish3:
-    #play music "audio/start label music audio.mp3" loop volume 0.25
+    hide r_scared
     with dissolve
     show r_normal
     j 'ฉันไม่ควรบอกวามจริงกับทุกคน'# #j_cry part3
