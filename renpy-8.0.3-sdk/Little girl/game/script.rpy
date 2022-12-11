@@ -407,8 +407,8 @@ label start2:
     scene bg_bus_stop
     with fade
     #เพิ่มฉาก
-    show r_normal #เดินเข้ามา
-    with zoomin
+    show j_normal part2 with dissolve
+    show r_normal with zoomin
     pause(0.25)
     # script
     j "จัดผมก็ได้ใช้เวลาไปสักพักแล้ว วันนี้จะเดินทางยังไงดีนะ"#j_normal
@@ -419,7 +419,9 @@ label start2:
             with dissolve
             show r_lookup
             r "ฉันถามจริง? เธอก็รู้ตารางรถเมล์ไม่ใช่หรอ"
-            j 'รู้ค่ะ'#show j_happy part2
+            hide j_normal part2 with dissolve
+            show j_happy part2
+            j 'รู้ค่ะ'
             hide r_lookup
             with dissolve
             show r_repressed
@@ -432,17 +434,21 @@ label start2:
             stop sound
             menu:
                 'เพื่อนๆจะเกลียดเธอ เพราะกลิ่นเหงื่อ':
-                    #show j_feel bad part2
+                    hide j_happy part2 with dissolve
+                    show j_feel bad part2
                     r 'งั้นถ้ามีรถเมล์ ก็คงจะเบียดเป็นปลากระป๋อง'
                     r 'แดดร้อนๆ คนเยอะๆ กลิ่นจะเป็นยังไงกันนะ'
                     hide r_lookup
+                    hide j_feel bad part2
                     with dissolve
                     show r_spirit_out
-                    r 'ใช่! เหม็น! มันเหม็นนนน เธอตัวจะเหม็นนนนนนนน'#show j_start shock
+                    show j_start shock
+                    r 'ใช่! เหม็น! มันเหม็นนนน เธอตัวจะเหม็นนนนนนนน'
                     r 'เพื่อนๆจะต้องรู้สึกรังเกียจเธอแน่เลย เธอจะโดนรังแก แล้วเธอก็จะตัวคนเดียว'
                     $ score += 1
                 'เธอจะตายเพราะขาดออกซิเจน!':
-                    #show j_feel bad part2
+                    hide j_happy part2 with dissolve
+                    show j_feel bad part2
                     r 'งั้นถ้ามีรถเมล์ ก็คงจะเบียดเป็นปลากระป๋อง'
                     hide r_lookup
                     with dissolve
@@ -451,7 +457,9 @@ label start2:
                     r 'แล้วถ้ารถติดเธอ อาจจะต้องติดอยู่บนรถที่มีกลุ่มประชากรหนาแน่น'
                     r 'คิดดูสิ ติดอยู่กับกลุ่มประชากรเยอะเย้อะ'
                     r 'ออกซิเจนก็จะน้อยลง คาร์บอนไดออกไซด์ก็เยอะ ทั้งจากมนุษย์และควันรถ'
-                    r 'เธออาจจะขาดอากาศหายใจ เป็นลมล้มพับไปก็ได้'#show j_start shock
+                    hide j_feel bad part2 with dissolve
+                    show j_start shock
+                    r 'เธออาจจะขาดอากาศหายใจ เป็นลมล้มพับไปก็ได้'
                     hide r_swing
                     with dissolve
                     show r_ambulance
@@ -460,8 +468,8 @@ label start2:
                     stop sound
                     $ score += 1
                 'เธอจะไม่ผ่านวิชาเพราะไปโรงเรียนสาย':
-                    #show j_feel bad part2
-                    # show clock rabbit
+                    hide j_happy part2 with dissolve
+                    show j_feel bad part2
                     hide r_lookup
                     with dissolve
                     show r_clock
@@ -474,15 +482,20 @@ label start2:
                     stop sound
                     r 'อาจารย์ก็จะหักคะแนนเธอ แล้วถ้าคะแนนเธอไม่ดี เพราะจะติด F หรือไม่ก็ไม่ผ่านวิชา'
                     hide r_spirit_out
+                    hide j_feel bad part2
                     with dissolve
                     show r_fallear
-                    j 'ถึงแม้จะโดนหักคะแนน แต่ไม่ถึงกับติด F หรือไม่ผ่านวิชาหรอกนะคะ'#show j_dont worry part2 
+                    show j_dont worry part2 
+                    j 'ถึงแม้จะโดนหักคะแนน แต่ไม่ถึงกับติด F หรือไม่ผ่านวิชาหรอกนะคะ'
                     j 'แล้วฉันไม่เคยไปสายด้วย เพราะงั้นไม่ต้องกลัวค่ะ'
                     j 'ฉันจะขึ้นรถเมล์ อย่าขี้กลัวไปหน่อยเลย'
                     $score += 0
             if score > 0:
                 menu:
                     'Toxic Level Up':
+                        hide j_dont worry part2 with dissolve
+                        hide j_start shock
+                        show j_start shock
                         play sound "audio/rabbit transform.mp3" volume 0.5
                         hide r_ambulance
                         hide r_spirit_out
@@ -503,19 +516,25 @@ label start2:
                         stop sound
                 menu:
                     'มีโรคจิตมาลวนลาม':
+                        hide j_start shock
+                        show j_start shock
                         hide r_coffin
                         with dissolve
                         show r_scared
                         r 'ความไม่คาดคิดของเธอ อาจจะทำให้เธอตกอยู่ในอันตรายเลยก็ได้'
-                        r 'มันมีโอกาสที่เธอจะเจอไอโรคจิตที่จะลวนลามเธอบนรถเมล์ก็ได้ ไม่ก็พวกแอบถ่ายใต้กระโปรง'#show j_shock part2
+                        hide j_start shock with dissolve
+                        show j_shock part2
+                        r 'มันมีโอกาสที่เธอจะเจอไอโรคจิตที่จะลวนลามเธอบนรถเมล์ก็ได้ ไม่ก็พวกแอบถ่ายใต้กระโปรง'
                         # show smile but angry rabbit
                         r 'เธอคงจะไม่อยากให้มีแผลใจที่โดนเจ้าพวกโรคจิตมากระทำต่อเธอใช่มั้ย'
                         # damage joseph
                     'โดนขโมยของ':
                         hide r_coffin
+                        hide j_start shock
                         with dissolve
                         show r_theft
-                        r 'เธออาจจะโดนโจรมาล้วงกระเป๋าก็ได้นะ'#show j_shock part2
+                        show j_shock part2
+                        r 'เธออาจจะโดนโจรมาล้วงกระเป๋าก็ได้นะ'
                         r 'ของในกระเป๋าเธอก็มีของสำคัญมากมาย ไม่ก็ของที่มีมูลค่า'
                         r 'ถ้าเธอขัดขืน เธออาจจะโดนขู่จี้ก็ได้'
                         # spirit out
@@ -531,20 +550,27 @@ label start2:
                 with dissolve
                 show r_spirit_out
                 r 'เธออาจจะโดนลูกหลงจากเหตุการณ์มีคนตีกันบนรถ'
-                r 'ถ้าเธอซวยจริงๆอย่างที่ฉันพูดมา เธออาจจะตายก็ได้เลยนะ'#show j_dead part2
+                hide j_shock part2 with dissolve
+                show j_dead part2
+                r 'ถ้าเธอซวยจริงๆอย่างที่ฉันพูดมา เธออาจจะตายก็ได้เลยนะ'
                 r 'ตายน่ะ ตายยยยยยยยยยยยยยยยยยยยย'
                 hide r_spirit_out
                 with dissolve
                 show r_swing
                 r 'เสียเวลา อันตราย​ เสียเวลา อันตราย เสียเวลา อันตราย เสียเวลา อันตราย​ เสียเวลา อันตราย เสียเวลา อันตราย เสียเวลา อันตรายยยยย'
+                hide j_dead part2 with dissolve
                 jump finish2
             else:
-                #show rabbit lose
+                hide j_dont worry part2
+                $ renpy.movie_cutscene('images/lose.avi')
                 jump start3
         'วินมอไซค์':
+            hide j_normal part2
+            show j_feel bad part2
             r 'เธอใจกล้าเกินไปหรือเปล่า'
             j 'แต่ว่านี่เป็นทางเลือกที่เร็วที่สุดแล้วนะ'
-            r 'ก็ใช่ แต่ ทางนี้ก็ใช้เงินมากที่สุดเหมือนกัน'#show j_feel bad part2
+            show r_normal
+            r 'ก็ใช่ แต่ ทางนี้ก็ใช้เงินมากที่สุดเหมือนกัน'
             hide r_normal
             with dissolve
             show r_shake
@@ -565,7 +591,10 @@ label start2:
                     with zoominout
                     with hpunch
                     with vpunch
-                    r 'อย่างที่เธอบอกในตอนแรก ทางเลือกที่ "เร็วที่สุด" ที่เร็วที่สุดก็เพราะว่าเขาขับเร็วมากๆ'#show j_start shock part2
+                    hide j_normal part2
+                    hide j_feel bad part2 with dissolve
+                    show j_start shock
+                    r 'อย่างที่เธอบอกในตอนแรก ทางเลือกที่ "เร็วที่สุด" ที่เร็วที่สุดก็เพราะว่าเขาขับเร็วมากๆ'
                     r 'แล้วถ้าเกิดอุบัติเหตุ​ล่ะ บางทีเขาก็ไม่มีหมวกกัน​น็อค​ให้ใส่ป้องกันอีก'
                     r 'เธอก็เห็นข่าวที่เกี่ยวกับอุบัติเหตุ​ทางถนนอยู่บ่อยๆหนิ'
                     r 'ถ้าเธอนั่งวันนี้ เธออาจจะเกิดเหตุการณ์​ไม่คาดฝัน​ก็ได้นะ'
@@ -581,7 +610,9 @@ label start2:
                     r 'เธอรู้มั้ยว่าพ่อแม่เธอจะเสียใจขนาดไหน'
                     r 'พวกท่านจะต้องโทษตัวท่านเองแน่ๆ ว่าทำไมถึงได้ปล่อยให้ลูกสุดที่รักเดินทางเอง ทำไมไม่ดูแลลูกให้ดีกว่านี้'
                     r 'เธออยากจะทำให้พวกท่านเสียใจหรอ'
-                    j 'ไม่ ฉันไม่ได้คิดจะให้เป็นแบบนั้น'#show j_shock part2
+                    hide j_start shock with dissolve
+                    show j_shock part2
+                    j 'ไม่ ฉันไม่ได้คิดจะให้เป็นแบบนั้น'
                     j 'ตะ แต่ว่า'
                     hide r_cry_big
                     with dissolve
@@ -594,24 +625,31 @@ label start2:
                     r 'ข้อเสียนี่ยังไม่หมดนะ เพื่อนที่รักเธอ และเพื่อนที่เธอรักอีกล่ะ ไหนจะความใฝ่ฝันของเธอที่ตั้งเป้าไว้ว่าจะทำให้สำเร็จ'
                     r 'แล้วถ้าเธอตัดสินใจเลือกวินมอไซค์ แล้วเกิดอะไรขึ้นมา สิ่งที่ตั้งเป้าจะทำให้สำเร็จ เธออาจจะทำให้สำเร็จไม่ได้อีกเลยนะ'
                     # damage joseph
+                    hide j_shock part2 with dissolve
                     jump finish2
     label finish2:
-        j 'แล้วฉันควรจะทำยังไง'#show j_start shock part2
+        show j_start shock
+        j 'แล้วฉันควรจะทำยังไง'
         hide r_swing
         with dissolve
         hide r_cry
         with dissolve
         show r_normal_big
         r 'เดิน'
-        j 'คะ'#show j_shock part2
+        hide j_start shock with dissolve
+        show j_shock part2
+        j 'คะ'
         r 'เดินไปโรงเรียน'
         j 'แต่ว่านี่จะทำให้ไม่ทันเอานะ'
         hide r_normal_big
         with dissolve
         show r_health
         r 'เชื่อฉันแล้วเธอจะปลอดภัยจากอันตราย แล้วก็ใช้วิธีเดินเร็วๆนะ อย่าวิ่งละ ถ้าหกล้มขึ้นมาจะเป็นเรื่องอีก'
-        j 'ฮือ ทำไมฉันต้องมากลัวเรื่องพวกนี้ด้วย'#show j_cry part2
-        # This ends the game.
+        hide j_shock part2 with dissolve
+        show j_cry part2
+        j 'ฮือ ทำไมฉันต้องมากลัวเรื่องพวกนี้ด้วย'
+        hide j_cry part2 with dissolve
+        $ renpy.movie_cutscene('images/win.avi')
 label start3:
     play music "audio/start label music audio.mp3" loop volume 0.25
     $ score = 0
