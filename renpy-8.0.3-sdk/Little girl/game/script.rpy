@@ -396,23 +396,23 @@ label start2:
         'รถเมล์':
             hide r_normal
             with dissolve
-            show r_look_up
+            show r_lookup
             r "ฉันถามจริง? เธอก็รู้ตารางรถเมล์ไม่ใช่หรอ"
             j 'รู้ค่ะ'
-            hide r_look_up
+            hide r_lookup
             with dissolve
             show r_repressed
             r 'รถเมล์เคยมาตรงเวลาซะที่ไหนล่ะ นี่อาจจะทำให้เธอมานั่งรอรถเมล์อย่างเสียเวลาเปล่าก็ได้!!!!'
             j 'ฉันว่าฉันคงจะไม่โชคร้ายขนาดที่ว่ารอครึ่งชั่วโมงหรอกมั้งคะ'
             hide r_repressed
             with dissolve
-            show r_look_up
+            show r_lookup
             r 'ถ้าเธอจะคิดในแง่ดีแบบนั้น'
             menu:
                 'เพื่อนๆจะเกลียดเธอ เพราะกลิ่นเหงื่อ':
                     r 'งั้นถ้ามีรถเมล์ ก็คงจะเบียดเป็นปลากระป๋อง'
                     r 'แดดร้อนๆ คนเยอะๆ กลิ่นจะเป็นยังไงกันนะ'
-                    hide r_look_up
+                    hide r_lookup
                     with dissolve
                     show r_spirit_out
                     r 'ใช่! เหม็น! มันเหม็นนนน เธอตัวจะเหม็นนนนนนนน'
@@ -420,7 +420,7 @@ label start2:
                     $ score += 1
                 'เธอจะตายเพราะขาดออกซิเจน!':
                     r 'งั้นถ้ามีรถเมล์ ก็คงจะเบียดเป็นปลากระป๋อง'
-                    hide r_look_up
+                    hide r_lookup
                     with dissolve
                     show r_swing
                     r 'ไม่มีที่นั่งอีก เธอต้องยืนจนขาเมื่อย ปวดขาตั้งแต่หัววัน'
@@ -435,7 +435,7 @@ label start2:
                     $ score += 1
                 'เธอจะไม่ผ่านวิชาเพราะไปโรงเรียนสาย':
                     # show clock rabbit
-                    hide r_look_up
+                    hide r_lookup
                     with dissolve
                     show r_clock
                     r 'ถ้าเธอเอาแต่รอรถเมล์ รอไปเรื่อยๆ ทั้งๆที่ไม่รู้ว่าจะมาเมื่อไหร่'
@@ -504,7 +504,6 @@ label start2:
                 show r_swing
                 r 'เสียเวลา อันตราย​ เสียเวลา อันตราย เสียเวลา อันตราย เสียเวลา อันตราย​ เสียเวลา อันตราย เสียเวลา อันตราย เสียเวลา อันตรายยยยย'
                 jump finish2
-                $ renpy.movie_cutscene('win.avi')
             else:
                 #show rabbit lose
                 jump start3
