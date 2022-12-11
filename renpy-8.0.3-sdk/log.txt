@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 Sun Dec 11 13:16:49 2022
+=======
+Sun Dec 11 13:21:17 2022
+>>>>>>> 689d145b9850fe16bf55fa9a66b33c82acf5131f
 Windows-10-10.0.22000
 Ren'Py 8.0.3.22090809
  
 
 Bootstrap to the start of init.init took 0.03s
 Early init took 0.00s
+<<<<<<< HEAD
 Loader init took 0.03s
 Loading error handling took 0.02s
 Loading script took 0.26s
@@ -13,6 +18,16 @@ Loading persistent took 0.00s
 Set script version to: None (alternate path)
 Running init code took 0.28s
 Loading analysis data took 0.01s
+=======
+Loader init took 0.04s
+Loading error handling took 0.03s
+Loading script took 0.38s
+Loading save slot metadata. took 0.00s
+Loading persistent took 0.00s
+Set script version to: None (alternate path)
+Running init code took 0.37s
+Loading analysis data took 0.02s
+>>>>>>> 689d145b9850fe16bf55fa9a66b33c82acf5131f
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Dump and make backups. took 0.00s
@@ -21,8 +36,13 @@ Making clean stores took 0.00s
 Initial gc. took 0.02s
 DPI scale factor: 1.250000
 nvdrs: Loaded, about to disable thread optimizations.
+<<<<<<< HEAD
 nvdrs: Disabled thread optimizations.
 Creating interface object took 0.17s
+=======
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+>>>>>>> 689d145b9850fe16bf55fa9a66b33c82acf5131f
 Cleaning stores took 0.00s
 Init translation took 0.04s
 Build styles took 0.00s
@@ -34,15 +54,27 @@ Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
+<<<<<<< HEAD
 Interface start took 0.06s
+=======
+Interface start took 0.09s
+>>>>>>> 689d145b9850fe16bf55fa9a66b33c82acf5131f
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
+<<<<<<< HEAD
 Vendor: "b'NVIDIA Corporation'"
 Renderer: b'NVIDIA GeForce RTX 3050 Ti Laptop GPU/PCIe/SSE2'
 Version: b'4.6.0 NVIDIA 513.38'
 Display Info: None
 Screen sizes: virtual=(800, 600) physical=(1304, 978) drawable=(1304, 978)
+=======
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon(TM) Graphics'
+Version: b'4.6.14802 Compatibility Profile Context 21.40.46 30.0.14046.0'
+Display Info: None
+Screen sizes: virtual=(800, 600) physical=(745, 559) drawable=(745, 559)
+>>>>>>> 689d145b9850fe16bf55fa9a66b33c82acf5131f
 Maximum texture size: 4096x4096
