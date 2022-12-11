@@ -1,7 +1,19 @@
 renpy.ftl
+<<<<<<< HEAD
+renpy.texture
+renpy.geometry renpy.texture
+<<<<<<< HEAD
+renpy.alpha renpy.geometry renpy.texture
+renpy.solid
+renpy.geometry renpy.solid
+>>>>>>> 8fb6b827ae24e6e7f8670e7d181c6b0f3e58ebf8
+=======
+renpy.alpha renpy.texture
+=======
 renpy.solid
 renpy.alpha renpy.geometry renpy.texture
 renpy.alpha renpy.texture
 renpy.geometry renpy.solid
 renpy.geometry renpy.texture
 renpy.texture
+>>>>>>> 689d145b9850fe16bf55fa9a66b33c82acf5131f
