@@ -243,7 +243,7 @@ image r_happy:
     #เพิ่ม credit front ท้ายเกม
 
 label start:
-    play music "audio/start label music audio.mp3" loop volume 0.1
+    play music "audio/start label music audio.mp3" loop volume 0.25
     scene bg_dressuproom
     with fade
     #scene bg_dressuproom
@@ -259,6 +259,7 @@ label start:
     show r_lookup
     with zoomin
     # with dissolve
+    play sound 'audio/magic.mp3' volume 0.5
     'กระต่ายตัวนี้เป็นความคิดในใจส่วนหนึ่งของJoseph'
     r "นี่ เธอคิดดีแล้วหรอ ถักเปียหน่ะมันทั้งยุ่งยาก แบ่งช่อก็ยาก มัดตึงมากก็ไม่ได้เพราะมันจะทำให้เธอผมร่วง" #r_explain #show j_think v.1 part1
     hide r_lookup
@@ -275,6 +276,7 @@ label start:
     j "ถ้างั้นแล้ว ฉันควรจะทำทรงอะไรดีล่ะคะ"#show j_normal part1
     menu:
         "มัดรวบ":
+            play sound 'audio/girl laugh.mp3' volume 0.5
             hide r_lookup
             with dissolve
             show r_fashion
@@ -371,6 +373,7 @@ label start:
                     j "อะ อ่า.. โอเคค่ะ ลอนผมก็ลอนผม"
                     j "โอเคฉันลอนผมเลยแล้วกัน"
         "หนีบผม":
+            play sound 'audio/girl laugh.mp3' volume 0.5
             hide r_lookup
             with dissolve
             show r_fashion_glasses
@@ -400,13 +403,13 @@ label start:
     stop music fadeout 0.5
             
 label start2:
-    #play music "audio/label 2.mp3" volume 0.1 fadein 2.0
+    play music "audio/start label music audio.mp3" loop volume 0.25
     $ score = 0
     scene bg_bus_stop
     with fade
     #เพิ่มฉาก
-    show r_normal #เดินเข้ามา
-    with zoomin
+    show j_normal part2 with dissolve
+    show r_normal with zoomin
     pause(0.25)
     # script
     j "จัดผมก็ได้ใช้เวลาไปสักพักแล้ว วันนี้จะเดินทางยังไงดีนะ"#j_normal
@@ -417,7 +420,9 @@ label start2:
             with dissolve
             show r_lookup
             r "ฉันถามจริง? เธอก็รู้ตารางรถเมล์ไม่ใช่หรอ"
-            j 'รู้ค่ะ'#show j_happy part2
+            hide j_normal part2 with dissolve
+            show j_happy part2
+            j 'รู้ค่ะ'
             hide r_lookup
             with dissolve
             show r_repressed
@@ -430,17 +435,21 @@ label start2:
             stop sound
             menu:
                 'เพื่อนๆจะเกลียดเธอ เพราะกลิ่นเหงื่อ':
-                    #show j_feel bad part2
+                    hide j_happy part2 with dissolve
+                    show j_feel bad part2
                     r 'งั้นถ้ามีรถเมล์ ก็คงจะเบียดเป็นปลากระป๋อง'
                     r 'แดดร้อนๆ คนเยอะๆ กลิ่นจะเป็นยังไงกันนะ'
                     hide r_lookup
+                    hide j_feel bad part2
                     with dissolve
                     show r_spirit_out
-                    r 'ใช่! เหม็น! มันเหม็นนนน เธอตัวจะเหม็นนนนนนนน'#show j_start shock
+                    show j_start shock
+                    r 'ใช่! เหม็น! มันเหม็นนนน เธอตัวจะเหม็นนนนนนนน'
                     r 'เพื่อนๆจะต้องรู้สึกรังเกียจเธอแน่เลย เธอจะโดนรังแก แล้วเธอก็จะตัวคนเดียว'
                     $ score += 1
                 'เธอจะตายเพราะขาดออกซิเจน!':
-                    #show j_feel bad part2
+                    hide j_happy part2 with dissolve
+                    show j_feel bad part2
                     r 'งั้นถ้ามีรถเมล์ ก็คงจะเบียดเป็นปลากระป๋อง'
                     hide r_lookup
                     with dissolve
@@ -449,7 +458,9 @@ label start2:
                     r 'แล้วถ้ารถติดเธอ อาจจะต้องติดอยู่บนรถที่มีกลุ่มประชากรหนาแน่น'
                     r 'คิดดูสิ ติดอยู่กับกลุ่มประชากรเยอะเย้อะ'
                     r 'ออกซิเจนก็จะน้อยลง คาร์บอนไดออกไซด์ก็เยอะ ทั้งจากมนุษย์และควันรถ'
-                    r 'เธออาจจะขาดอากาศหายใจ เป็นลมล้มพับไปก็ได้'#show j_start shock
+                    hide j_feel bad part2 with dissolve
+                    show j_start shock
+                    r 'เธออาจจะขาดอากาศหายใจ เป็นลมล้มพับไปก็ได้'
                     hide r_swing
                     with dissolve
                     show r_ambulance
@@ -458,8 +469,8 @@ label start2:
                     stop sound
                     $ score += 1
                 'เธอจะไม่ผ่านวิชาเพราะไปโรงเรียนสาย':
-                    #show j_feel bad part2
-                    # show clock rabbit
+                    hide j_happy part2 with dissolve
+                    show j_feel bad part2
                     hide r_lookup
                     with dissolve
                     show r_clock
@@ -472,15 +483,20 @@ label start2:
                     stop sound
                     r 'อาจารย์ก็จะหักคะแนนเธอ แล้วถ้าคะแนนเธอไม่ดี เพราะจะติด F หรือไม่ก็ไม่ผ่านวิชา'
                     hide r_spirit_out
+                    hide j_feel bad part2
                     with dissolve
                     show r_fallear
-                    j 'ถึงแม้จะโดนหักคะแนน แต่ไม่ถึงกับติด F หรือไม่ผ่านวิชาหรอกนะคะ'#show j_dont worry part2 
+                    show j_dont worry part2 
+                    j 'ถึงแม้จะโดนหักคะแนน แต่ไม่ถึงกับติด F หรือไม่ผ่านวิชาหรอกนะคะ'
                     j 'แล้วฉันไม่เคยไปสายด้วย เพราะงั้นไม่ต้องกลัวค่ะ'
                     j 'ฉันจะขึ้นรถเมล์ อย่าขี้กลัวไปหน่อยเลย'
                     $score += 0
             if score > 0:
                 menu:
                     'Toxic Level Up':
+                        hide j_dont worry part2 with dissolve
+                        hide j_start shock
+                        show j_start shock
                         play sound "audio/rabbit transform.mp3" volume 0.5
                         hide r_ambulance
                         hide r_spirit_out
@@ -495,50 +511,67 @@ label start2:
                         hide r_tranform
                         with dissolve
                         show r_coffin
+                        play sound "audio/funeral dance.mp3" volume 0.25
                         r 'แรงพุ่ง แรงเหวี่ยง แรงเบรก จะทำให้เธอกลิ้งหลุดออกจากหน้าต่างก็ได้นะ ยิ่งตัวเล็กๆอยู่ ไปสวรรค์ได้เลย'
                         r 'ถ้าแล้วถ้าไม่ใช่ภัยจากอุบัติเหตุ เธออาจจะเจอภัยจากมนุษย์ด้วยกันเองก็ได้นะ'
+                        stop sound
                 menu:
                     'มีโรคจิตมาลวนลาม':
+                        hide j_start shock
+                        show j_start shock
                         hide r_coffin
                         with dissolve
                         show r_scared
                         r 'ความไม่คาดคิดของเธอ อาจจะทำให้เธอตกอยู่ในอันตรายเลยก็ได้'
-                        r 'มันมีโอกาสที่เธอจะเจอไอโรคจิตที่จะลวนลามเธอบนรถเมล์ก็ได้ ไม่ก็พวกแอบถ่ายใต้กระโปรง'#show j_shock part2
+                        hide j_start shock with dissolve
+                        show j_shock part2
+                        r 'มันมีโอกาสที่เธอจะเจอไอโรคจิตที่จะลวนลามเธอบนรถเมล์ก็ได้ ไม่ก็พวกแอบถ่ายใต้กระโปรง'
                         # show smile but angry rabbit
                         r 'เธอคงจะไม่อยากให้มีแผลใจที่โดนเจ้าพวกโรคจิตมากระทำต่อเธอใช่มั้ย'
                         # damage joseph
                     'โดนขโมยของ':
                         hide r_coffin
+                        hide j_start shock
                         with dissolve
                         show r_theft
-                        r 'เธออาจจะโดนโจรมาล้วงกระเป๋าก็ได้นะ'#show j_shock part2
+                        show j_shock part2
+                        r 'เธออาจจะโดนโจรมาล้วงกระเป๋าก็ได้นะ'
                         r 'ของในกระเป๋าเธอก็มีของสำคัญมากมาย ไม่ก็ของที่มีมูลค่า'
                         r 'ถ้าเธอขัดขืน เธออาจจะโดนขู่จี้ก็ได้'
                         # spirit out
                         hide r_theft
                         with dissolve
                         show r_rip
+                        play sound "audio/funeral dance.mp3" volume 0.25
                         r 'แล้วถ้าเหตุการณ์ร้ายแรง เธออาจจะโดนมีดจ้วง ไม่ก็โดนปาดคอ'
                         # damage joseph
+                stop sound
                 hide r_scared
                 hide r_rip
                 with dissolve
                 show r_spirit_out
                 r 'เธออาจจะโดนลูกหลงจากเหตุการณ์มีคนตีกันบนรถ'
-                r 'ถ้าเธอซวยจริงๆอย่างที่ฉันพูดมา เธออาจจะตายก็ได้เลยนะ'#show j_dead part2
+                hide j_shock part2 with dissolve
+                show j_dead part2
+                r 'ถ้าเธอซวยจริงๆอย่างที่ฉันพูดมา เธออาจจะตายก็ได้เลยนะ'
                 r 'ตายน่ะ ตายยยยยยยยยยยยยยยยยยยยย'
                 hide r_spirit_out
                 with dissolve
                 show r_swing
                 r 'เสียเวลา อันตราย​ เสียเวลา อันตราย เสียเวลา อันตราย เสียเวลา อันตราย​ เสียเวลา อันตราย เสียเวลา อันตราย เสียเวลา อันตรายยยยย'
+                hide j_dead part2 with dissolve
                 jump finish2
             else:
-                #show rabbit lose
+                hide j_dont worry part2
+                $ renpy.movie_cutscene('images/lose.avi')
                 jump start3
         'วินมอไซค์':
+            hide j_normal part2
+            show j_feel bad part2
             r 'เธอใจกล้าเกินไปหรือเปล่า'
             j 'แต่ว่านี่เป็นทางเลือกที่เร็วที่สุดแล้วนะ'
-            r 'ก็ใช่ แต่ ทางนี้ก็ใช้เงินมากที่สุดเหมือนกัน'#show j_feel bad part2
+            show r_normal
+            r 'ก็ใช่ แต่ ทางนี้ก็ใช้เงินมากที่สุดเหมือนกัน'
             hide r_normal
             with dissolve
             show r_shake
@@ -559,7 +592,10 @@ label start2:
                     with zoominout
                     with hpunch
                     with vpunch
-                    r 'อย่างที่เธอบอกในตอนแรก ทางเลือกที่ "เร็วที่สุด" ที่เร็วที่สุดก็เพราะว่าเขาขับเร็วมากๆ'#show j_start shock part2
+                    hide j_normal part2
+                    hide j_feel bad part2 with dissolve
+                    show j_start shock
+                    r 'อย่างที่เธอบอกในตอนแรก ทางเลือกที่ "เร็วที่สุด" ที่เร็วที่สุดก็เพราะว่าเขาขับเร็วมากๆ'
                     r 'แล้วถ้าเกิดอุบัติเหตุ​ล่ะ บางทีเขาก็ไม่มีหมวกกัน​น็อค​ให้ใส่ป้องกันอีก'
                     r 'เธอก็เห็นข่าวที่เกี่ยวกับอุบัติเหตุ​ทางถนนอยู่บ่อยๆหนิ'
                     r 'ถ้าเธอนั่งวันนี้ เธออาจจะเกิดเหตุการณ์​ไม่คาดฝัน​ก็ได้นะ'
@@ -575,7 +611,9 @@ label start2:
                     r 'เธอรู้มั้ยว่าพ่อแม่เธอจะเสียใจขนาดไหน'
                     r 'พวกท่านจะต้องโทษตัวท่านเองแน่ๆ ว่าทำไมถึงได้ปล่อยให้ลูกสุดที่รักเดินทางเอง ทำไมไม่ดูแลลูกให้ดีกว่านี้'
                     r 'เธออยากจะทำให้พวกท่านเสียใจหรอ'
-                    j 'ไม่ ฉันไม่ได้คิดจะให้เป็นแบบนั้น'#show j_shock part2
+                    hide j_start shock with dissolve
+                    show j_shock part2
+                    j 'ไม่ ฉันไม่ได้คิดจะให้เป็นแบบนั้น'
                     j 'ตะ แต่ว่า'
                     hide r_cry_big
                     with dissolve
@@ -588,92 +626,184 @@ label start2:
                     r 'ข้อเสียนี่ยังไม่หมดนะ เพื่อนที่รักเธอ และเพื่อนที่เธอรักอีกล่ะ ไหนจะความใฝ่ฝันของเธอที่ตั้งเป้าไว้ว่าจะทำให้สำเร็จ'
                     r 'แล้วถ้าเธอตัดสินใจเลือกวินมอไซค์ แล้วเกิดอะไรขึ้นมา สิ่งที่ตั้งเป้าจะทำให้สำเร็จ เธออาจจะทำให้สำเร็จไม่ได้อีกเลยนะ'
                     # damage joseph
+                    hide j_shock part2 with dissolve
                     jump finish2
     label finish2:
-        j 'แล้วฉันควรจะทำยังไง'#show j_start shock part2
+        show j_start shock
+        j 'แล้วฉันควรจะทำยังไง'
         hide r_swing
         with dissolve
         hide r_cry
         with dissolve
         show r_normal_big
         r 'เดิน'
-        j 'คะ'#show j_shock part2
+        hide j_start shock with dissolve
+        show j_shock part2
+        j 'คะ'
         r 'เดินไปโรงเรียน'
         j 'แต่ว่านี่จะทำให้ไม่ทันเอานะ'
         hide r_normal_big
         with dissolve
         show r_health
         r 'เชื่อฉันแล้วเธอจะปลอดภัยจากอันตราย แล้วก็ใช้วิธีเดินเร็วๆนะ อย่าวิ่งละ ถ้าหกล้มขึ้นมาจะเป็นเรื่องอีก'
-        j 'ฮือ ทำไมฉันต้องมากลัวเรื่องพวกนี้ด้วย'#show j_cry part2
-        # This ends the game.
+        hide j_shock part2 with dissolve
+        show j_cry part2
+        j 'ฮือ ทำไมฉันต้องมากลัวเรื่องพวกนี้ด้วย'
+        hide j_cry part2 with dissolve
+        $ renpy.movie_cutscene('images/win.avi')
 label start3:
+    play music "audio/start label music audio.mp3" loop volume 0.25
     $ score = 0
-    scene bg_classroom_all
+    scene bg_school
     with fade
     #เพิ่มฉาก
     show r_normal
+    with zoomin
     #school
+    show j_normal part3
+    with zoomin
     j 'ฟู่ว เหนื่อยแต่ก็มาทันเวลาด้วยล่ะค่ะ'#show j_normal part3
     r 'เก่งมากสาวน้อย เข้าห้องเรียนกันเถอะ'
     #classroom
+    scene bg_classroom_bg
+    with fade
+    show j_normal part3
+    with dissolve
+    show r_normal
+    with dissolve
     ch 'นักเรียนจ๊ะ คะแนนสอบย่อยครั้งที่แล้วออกแล้วนะจ๊ะ'
     j 'เอ๊ะ!'
     ch 'พอครูเรียกชื่อแล้วก็ออกมารับนะจ๊ะ เด็กชายสมชาย...เด็กหญิงโฟกัส'
     j 'เอาล่ะๆ คะแนนออกแล้ว ลุ้นจังเลยค่ะ'
+    hide r_normal
+    with dissolve
+    show r_swing
     r 'โอ๊ยๆๆๆ เมื่อไหร่จะถึง'
     ch 'เด็กหญิงแม่น้ำไนล์...เด็กหญิงออมเงิน...เด็กชายแจ็คฟรุ๊ต'
     j 'ฉันเคยคิดว่าที่บ้านเขาต้องชอบกินขนุนมากแน่เลยถึงตั้งชื่อว่าแจ๊คฟรุ๊ต'
     ch 'เด็กหญิงโจเซฟ'
     j 'ตาฉันแล้วค่ะ'
+    hide j_normal part3
+    with dissolve
+    show j_give her score part3
     #j_give her score part3 
+    play sound "audio/heart beat.mp3" loop volume 1.0
     j 'ฟู่ว ใจเต้นแรงไปหมดเลยค่ะ'
+    hide r_swing
+    with dissolve
+    show r_swing_speed
     r 'รีบๆดูเร็วๆๆๆ'
     j 'โอเค นับ 3...2'
     r 'ฮึ่ยยย'
-    j '1....!!!'#j_see scored first part3 
-    j 'ทำไมมัน...'#j_see scored second part3 
+    hide j_give her score part3
+    with dissolve
+    show j_see scored first part3
+    j '1....!!!'#j_see scored first part3
+    hide j_see scored first part3
+    with dissolve
+    show j_see scored second part3
+    stop sound
+    stop music fadeout 2.0
+    play sound "audio/label 2.mp3" fadein 7.0
+    j 'ทำไมมัน...'#j_see scored second part3
+    hide j_see scored second part3
+    with dissolve
+    show j_shocked her score part3 
     j 'ออกมาเป็นแบบนี้ล่ะคะ'#j_shocked her score part3 
+    hide r_swing_speed
+    with dissolve
+    show r_spirit_out
     r 'โอ้วตายแล้ว งานนี้แย่แน่ๆ'
     j 'มะ ไม่ขนาดนั้นหรอกค่ะ..'
+    hide j_shocked her score part3
+    with dissolve
+    show j_talk wit rabbit part3
     #j_talk with rabbit part3 
     r 'ไม่ มันขนาดนั้นแหละ คิดดูสิมันจะเกิดอะไรขึ้นถ้าทุกคนรู้ว่าเธอได้เกรดเท่านี้'
     j 'เกรดมันก็แค่..ไม่ๆ ทุกคนไม่ใจร้ายขนาดนั้นหรอกค่ะ'
     r 'ทุกคนอย่างนั้นหรอ พอทุกคนรู้เกรดของเธอแล้วจะไม่มีอะไรเปลี่ยนแปลงเลยอย่างนั้นหรอ'
+    $ score = 0
     menu:
         'อาจารย์':
+            hide r_spirit_out
+            show r_normal
+            with dissolve
             r 'รู้อะไรมั๊ย คนแรกที่รู้เกรดของเธอคืออาจารย์'
             j 'แน่นอนอยู่แล้วค่ะ เพราะเขาเป็นคนให้เกรดหนิคะ'
             r 'และเขาก็จะรู้ว่า เด็กสาวคนนี้มันไม่เอาไหน'
             j 'คนเป็นอาจารย์เขาจะคิดแบบนั้นได้ยังไงล่ะคะ'
+            hide r_normal
+            with dissolve
+            show r_lookup
             r 'เธออ่านใจเขาได้หรอ จะบอกอะไรให้นะ คนเป็นอาจารย์น่ะ เขาชอบและใส่ใจกับเด็กที่เรียนเก่งเกรดดี'
-            r 'หลังจากนี้เธอคงได้รับสายตาดูแคลนจากเขาแล้วล่ะ ระวังตอนเช็คชื่อให้ดีนะหรือเขาจะทำเป็นไม่เห็นชือเธอกันนะ'
+            r 'หลังจากนี้เธอคงได้รับสายตาดูแคลนจากเขาแล้วล่ะ ระวังตอนเช็คชื่อให้ดีนะหรือเขาจะทำเป็นไม่เห็นชื่อเธอกันนะ'
+            hide j_talk wit rabbit part3
+            with dissolve
+            show j_relax part3
             j 'ฉันเชื่อว่าอาจารย์ไม่ใจร้ายขนาดนั้นหรอกค่ะ เขามีบทบาทที่จะทำให้พวกเราเป็นคนที่ดีขึ้น เราต้องให้ใจกับเขาด้วย'#j_ralax part3
             r 'ตามใจเธอก็แล้วกัน'
             j 'ตั้งใจเรียนกันเถอะค่ะ'
+            stop sound
             $ score += 0
         'เพื่อน':
+            hide r_spirit_out
+            show r_lookup
+            with dissolve
             r '"ไม่เห็นจะเรียนเก่งเท่าไหร่เลย" เดินๆอยู่ประโยคนี้คงตามหลอกหลอนเธอไปสักพักเลยนะ'
             j 'นั่นมันใจร้ายเกินไปแล้ว ไม่ๆ ทุกคนต้องเข้าใจแน่นอนค่ะ'
+            hide r_lookup
+            with dissolve
+            show r_spirit_out
             r 'นั่งกินข้าวคนเดียวก็คงจะเหงาแย่เลยนะ'
             r 'วันไหนลืมเอากระเป๋ามา ระวังไม่มีที่นั่งล่ะ'
             r 'ตอนขึ้นไปเรียนก็คงไม่มีที่นั่งดีๆสำหรับเธอแล้ว'
             j 'ไม่มีใครตัดสินคนจากความผิดพลาดเพียงครั้งเดียวหรอกค่ะ...'
+            hide r_spirit_out
+            with dissolve
+            show r_swing
             r 'และงานกลุ่มก็จะไม่มีใครเอาเธอมาอยู่ด้วย!!'
-            r 'และไม่มีที่ไหนรับคนคะแนนน้อยเข้าทำงานแน่นอนนนนนน'#j_start scared part3 
-            j 'ฮือ นี่มันทำฉันรู้สึกแย่จนปวดท้องไปหมดแล้ว' #j_scared that it ppb happend part3 
+            hide j_talk wit rabbit part3
+            with dissolve
+            show j_start scared part3
+            r 'และไม่มีที่ไหนรับคนคะแนนน้อยเข้าทำงานแน่นอนนนนนน'#j_start scared part3
+            hide j_start scared part3
+            with dissolve
+            show j_scared that it ppb happend part3
+            j 'ฮือ นี่มันทำฉันรู้สึกแย่จนปวดท้องไปหมดแล้ว' #j_scared that it ppb happend part3
             r 'สาวน้อยคนนี้จะเป็นที่จดจำในงานเลี้ยงรุ่น'
             $ score += 1
         'ครอบครัว':
+            hide r_spirit_out
+            show r_j
+            with dissolve
             r '"พ่อคะแม่คะ วันนี้เกรดออกแล้ว แต่มันไม่ค่อยดีเลยค่ะ"'
+            hide r_j
+            with dissolve
+            show r_dad
             r '"ไม่เป็นไรหรอกลูก ครั้งหน้าเอาใหม่ได้นะ"'
+            hide r_dad
+            with dissolve
+            show r_lookup
             r 'ถ้าพ่อกับแม่ตอบเธอมาแบบนี้ ลองหยิกตัวเองดูนะ เผื่อเธอกำลังฝันอยู่'
             j 'ฉันไม่อยากให้พวกท่านเสียใจเลยค่ะ ฉันไม่อยากบอก แต่ยังไงพวกท่านก็ต้องรู้'
+            hide r_lookup
+            with dissolve
+            show r_smile
             r 'ไม่อยากบอกก็ไม่ต้องบอกสิ ไม่ใช่เรื่องที่ต้องกังวลเลย'
             j 'ทำยังไงดีล่ะคะ'
             r 'ทำลายมันสิ เผามัน ปั้นกลมๆแล้วโยนลงน้ำ'
-            j 'ฉันจะ....ไม่ ฉันจะไม่ทำอย่างนั้นค่ะ พ่อแม่คือคนที่เข้าใจฉันที่สุด'#j_start scared part3 
+            hide j_talk wit rabbit part3
+            with dissolve
+            show j_start scared part3
+            j 'ฉันจะ....ไม่ ฉันจะไม่ทำอย่างนั้นค่ะ พ่อแม่คือคนที่เข้าใจฉันที่สุด'#j_start scared part3
+            hide r_smile
+            with dissolve
+            show r_lookup
             r 'แต่ไม่ใช่กับป้าข้างบ้าน'
             j 'ป้าข้างบ้านไม่เกี่ยวนะคะ'
+            hide r_lookup
+            with dissolve
+            show r_aunt
             r 'โถ่ๆ มีะไรที่ป้าข้างบ้านไม่รู้บ้าง และเคยได้ยินประโยคนี้มั๊ย "ป้าข้างบ้านรู้ คนทั้งโลกรู้"'
             r 'วันนึงอาจจะมีคุณป้าที่ไหนไม่รู้มาทักทายเธอ แล้วคิดว่าป้ารู้จักเธอได้ยังไงล่ะ'
             j 'ป้าเป็นเพื่อนของพ่อแม่'
@@ -681,48 +811,107 @@ label start3:
             r 'พ่อกับแม่คงเหนื่อยกับยัยหนูนั่นแย่เลยสินะเนี่ย ฮี่ๆๆๆๆ'
             menu :
                 'บอกครอบครัว':
+                    hide r_aunt
+                    show r_smile
+                    with dissolve
+                    hide j_start scared part3
+                    with dissolve
+                    show j_relax part3
                     #j_ralax part3
                     j 'ขอแค่พ่อกับแม่เข้าใจฉันก็พอแล้วค่ะ บางทีเราไม่จำเป็นต้องใส่ใจว่าคนอื่นจะมองยังไง'
+                    hide r_smile
+                    with dissolve
+                    show r_aunt
                     r 'ที่ฉันพูดไปเธอได้ฟังรึเปล่า รู้มั๊ยว่าเด็กเกือบ 90 เปอร์เซ็นต์ ของทั้งโลกจะเป็นโรคซึมเศร้าเพราะป้าข้างบ้าน'
                     j 'ฉันจะเป็นอีก 10 เปอร์เซ็นต์ที่เหลือเองค่ะ'
                     r 'เธอท้าทายอำนาจมืดแล้วล่ะ'
                     j 'แต่จริงๆแล้วไม่ใช่ว่าคุณป้าทุกคนจะใจร้ายเสมอไปนะคะ'
+                    stop sound
                     $ score += 0
                 'ครอบครัวคงไม่เข้าใจ':
+                    hide r_aunt
+                    show r_spirit_out
+                    with dissolve
+                    hide j_start scared part3
+                    with dissolve
+                    show j_scared that it ppb happend part3
                     j 'พวกท่านต้องไม่เข้าใจแน่ค่ะ'#j_scared that it ppb happend part3 
                     r 'เราแค่ป้องกันกรณีที่ร้ายแรงที่สุด คือพวกเขาจะห้ามไม่ให้เธอทำงานอดิเรกอีกเลย'
                     r 'ไม่มีนิยายให้เธออ่าน ทุกอย่างถูกกีดกัน เพื่อให้เธอมีเวลาโฟกัสกับเรื่องการเรียนให้มากที่สุด'
                     j 'นั่นมันแย่มาก ฉันจะไม่บอกพวกเขาเด็ดขาดเลย'
                     $ score += 1
         'คนที่แอบชอบ':
+            hide r_spirit_out
+            with dissolve
+            show r_normal
             j 'เขาเป็นคนดีนะคะ ฉันเคยเห็นเขาช่วยติวให้เพื่อนๆด้วย'
             r 'แสดงว่าเขาต้องเป็นคนที่เก่งมากๆ เธอหมดโอกาสแล้วล่ะ'
+            hide j_talk wit rabbit part3
+            with dissolve
+            show j_start scared part3 
             #j_start scared part3 
             menu:
                 'พลิกวิกฤตให้เป็นโอกาส':
+                    hide j_start scared part3
+                    with dissolve
+                    show j_relax part3
                     #j_ralax part3
+                    hide r_normal
+                    with dissolve
+                    show r_lookup
                     j 'ไม่หรอกค่ะ ไม่แน่ฉันอาจจะขอเข้าร่วมการติวในครั้งหน้าด้วย'
                     r 'เพ้อฝันจริงๆเลยยัยเด็กคนนี้'
+                    stop sound
                     $ score += 0
                 'ตัดใจ':
-                    #j_scared that it ppb happen part3 
+                    hide r_normal
+                    with dissolve
+                    show r_behind
+                    hide j_start scared part3
+                    with dissolve
+                    show j_scared that it ppb happend part3
+                    #j_scared that it ppb happen part3
                     r 'ดูท่าทีเหงาหงอยนั่นสิ ไม่เป็นไรนะฉันจะอยู่กับเธอเอง'
                     $ score += 1
-    if score > 1:
+    #play music "audio/start label music audio.mp3" loop volume 0.25
+    if score >= 1:
+        play sound "audio/label 2.mp3" fadein 7.0
         menu:
             'Toxic Level Up':
                 play sound "audio/rabbit transform.mp3" volume 0.5
+                hide r_lookup
+                hide r_swing
+                hide r_behind
+                hide r_spirit_out
+                with zoominout
+                pause(0.5)
+                show r_tranform
+                with zoominout
+                with hpunch
+                with vpunch
+                pause(0.5)
                 r 'ฉันฟันธงเลยว่าเธอคงอยากจะลาออกแน่นอน เป็นสาวน้อยที่แย่จังเลยน้าาา'
+                hide r_tranform
+                show r_smile_angry
+                with dissolve
                 r 'เงินค่าเทอมตรงนั้นสามารถเอาไปใช้ประโยชน์ได้หลายอย่างแต่เธอดันทำให้มันเสียเปล่าซะได้ ตัดสินใจผิดพลาดจริงๆ'
+                hide r_smile_angry
+                with dissolve
+                show r_scared
                 r 'ไม่ใช่เงินที่หาเธอมาด้วยตัวเองอีก ได้ยินมั๊ยว่าเงินน่ะ! เป็นของมีค่าที่ถูกเธอผลาญไปอย่างเปล่าประโยชน์'
                 r 'อนาคตคงเธอมืดบอด ไร้จุดหมายและมีปลายทางที่เตียงนอนกับหมอนเน่า ฟังดูดีหรอ ไม่เลย เธอจะกลายเป็นตัวไร้ประโยชน์ในบ้าน'
                 r 'อยู่ในห้องตลอดไป!!!!'
+                stop sound fadeout 2.0
                 # show j_dead part3
                 jump finish3
     else:
         #show rabbit lose
+        #play music "audio/start label music audio.mp3" loop volume 0.25
         jump start4
 label finish3:
+    hide r_scared
+    with dissolve
+    show r_normal
     j 'ฉันไม่ควรบอกวามจริงกับทุกคน'# #j_cry part3
     r 'ใช่แล้วสาวน้อย ทุกคนจะปฏิบัติกับเธอแบบเดิม'
     j 'ฉันจะบอกกับทุกคนว่าฉันจะเก็บกลับไปดูกับพ่อแม่'
@@ -731,6 +920,7 @@ label finish3:
     # This ends the game
 
 label start4:
+    play music "audio/start label music audio.mp3" loop volume 0.25
     # bedroom
     j 'จบภารกิจของวันนี้แล้วสินะคะ'#show j_relax part4
     r 'ได้เวลานอนกันแล้ว มีความฝันที่อยากได้มั๊ยสาวน้อย'
