@@ -236,7 +236,7 @@ image r_aunt = "r_aunt.png"
     #เพิ่ม credit front ท้ายเกม
 
 label start:
-    play music "audio/start label music audio.mp3" volume 0.1
+    play music "audio/start label music audio.mp3" loop volume 0.1
     scene bg_dressuproom
     with fade
     #scene bg_dressuproom
@@ -433,7 +433,9 @@ label start2:
                     hide r_swing
                     with dissolve
                     show r_ambulance
+                    play sound "audio/Ambulance  Sound (1).mp3" volume 1
                     r 'จากการที่เธอจะไปโรงเรียน ได้ไปโรงบาลแทนแน่'
+                    stop sound
                     $ score += 1
                 'เธอจะไม่ผ่านวิชาเพราะไปโรงเรียนสาย':
                     # show clock rabbit

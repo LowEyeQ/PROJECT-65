@@ -1,11 +1,11 @@
->>>>>>> 8fb6b827ae24e6e7f8670e7d181c6b0f3e58ebf8
-renpy.alpha renpy.texture
-<<<<<<< HEAD
-renpy.solid
-renpy.ftl
-renpy.geometry renpy.texture
-renpy.geometry renpy.solid
 renpy.texture
+<<<<<<< HEAD
 >>>>>>> 689d145b9850fe16bf55fa9a66b33c82acf5131f
+renpy.geometry renpy.texture
+renpy.alpha renpy.texture
+>>>>>>> 8fb6b827ae24e6e7f8670e7d181c6b0f3e58ebf8
 renpy.alpha renpy.geometry renpy.texture
+renpy.solid
 =======
+renpy.geometry renpy.solid
+renpy.ftl
