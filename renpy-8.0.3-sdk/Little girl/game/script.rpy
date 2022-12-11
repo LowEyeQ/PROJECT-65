@@ -840,19 +840,27 @@ label start3:
         menu:
             'Toxic Level Up':
                 play sound "audio/rabbit transform.mp3" volume 0.5
+                hide r_lookup
+                hide r_swing
+                hide r_behind
+                hide r_spirit_out
+                with zoominout
+                pause(0.5)
+                show r_tranform
+                with zoominout
+                with hpunch
+                with vpunch
+                pause(0.5)
                 r 'ฉันฟันธงเลยว่าเธอคงอยากจะลาออกแน่นอน เป็นสาวน้อยที่แย่จังเลยน้าาา'
                 hide r_tranform
-                with dissolve
                 show r_smile_angry
+                with dissolve
                 r 'เงินค่าเทอมตรงนั้นสามารถเอาไปใช้ประโยชน์ได้หลายอย่างแต่เธอดันทำให้มันเสียเปล่าซะได้ ตัดสินใจผิดพลาดจริงๆ'
                 hide r_smile_angry
                 with dissolve
                 show r_scared
                 r 'ไม่ใช่เงินที่หาเธอมาด้วยตัวเองอีก ได้ยินมั๊ยว่าเงินน่ะ! เป็นของมีค่าที่ถูกเธอผลาญไปอย่างเปล่าประโยชน์'
                 r 'อนาคตคงเธอมืดบอด ไร้จุดหมายและมีปลายทางที่เตียงนอนกับหมอนเน่า ฟังดูดีหรอ ไม่เลย เธอจะกลายเป็นตัวไร้ประโยชน์ในบ้าน'
-                hide r_scared
-                with dissolve
-                show r_scared
                 r 'อยู่ในห้องตลอดไป!!!!'
                 stop sound fadeout 2.0
                 # show j_dead part3
@@ -862,6 +870,7 @@ label start3:
         #play music "audio/start label music audio.mp3" loop volume 0.25
         jump start4
 label finish3:
+    hide r_scared
     with dissolve
     show r_normal
     j 'ฉันไม่ควรบอกวามจริงกับทุกคน'# #j_cry part3
