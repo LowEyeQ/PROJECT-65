@@ -249,11 +249,19 @@ label start:
     #scene bg_dressuproom
     'เช้าวันหนึ่งของสาวน้อยที่ชื่อว่าJoseph'
     j "เอ๋ วันนี้จะแต่งตัวยังไงดีนะ"
+    show j_normal part1
+    with dissolve
     j "ใส่ตัวนี้แล้วกัน น่าจะเข้ากับบรรยากาศวันนี้นะ"#show j_normal part1
     play sound 'audio/ping.mp3' volume 0.5
     j "โอ้ 7 โมงแล้วหรอเนี่ย "
     j "โอเคๆ งั้นถึงเวลาที่ต้องทำผมแล้วสินะคะ"
+    hide j_normal part1
+    with dissolve
+    show j_think v.1 part1
     j "ไหน ดูซิ ทำผมทรงอะไรดีนะวันนี้"#show j_think v.1 part1
+    hide j_think v.1 part1
+    with dissolve
+    show j_normal part1
     j "ถักเปียดีกว่า"#show j_normal part1
     r "(แม่งเอ้ย จะทำผม***อะไรก็ทำไปเถอะ จะไปโรงเรียนไม่ทันอยู่และ)" #r_lookup (pop-rabbit)
     show r_lookup
@@ -266,13 +274,22 @@ label start:
     with dissolve
     show r_explain
     r "มัดหย่อนมากก็ไม่ดีเพราะมันหลุดง่ายแถมถ้ามัดไว้นานๆผมก็หยักอีก ไม่เป็นทรงด้วยนะเธอ"
+    hide j_normal part1
+    with dissolve
+    show j_shock part1
     r "มันไม่สวย มันไม่สวยย เอาทรงอื่น!  ไม่รู้ว่าถักแล้วจะเบี้ยวรึป่าวด้วย อย่าถักเลย ทำทรงอื่นเหอะ"#show j_shock part1
     r "ถ้าเธอมัดผมดังโงะ คนอื่นเขาจะคิดว่าเธอไม่สระผมนะ แต่ถ้ามัดจุกสองข้างมันก็จะน่ารักเกินไปไม่เข้ากับชุดหรอก" #r_lookup
     hide r_explain
     with dissolve
     show r_lookup
+    hide j_shock part1
+    with dissolve
+    show j_think v.2 part1
     j "(ไม่ได้สิ ไม่ได้ ไปเรียนทั้งทีก็อยากจะทำผมน่ารักๆนะ)"#show j_think v.2 part1
     j "..."
+    hide j_think v.2 part1
+    with dissolve
+    show j_normal part1
     j "ถ้างั้นแล้ว ฉันควรจะทำทรงอะไรดีล่ะคะ"#show j_normal part1
     menu:
         "มัดรวบ":
@@ -283,6 +300,9 @@ label start:
             r "เธอจะดูไร้ตัวตนมากเลยนะ ถ้าเธอมัดรวบหน่ะ คนอื่นเขาจะมองว่าการมัดรวบหน่ะมันธรรมดามากเลยน่ะสิ คนส่วนใหญ่ก็มัดรวบกันทั้งนั้น" #r_fashion_glasses #show j_think v.1 part1
             r "มันช่างดูไม่มีสไตล์ที่โดดเด่นเอาซะเลย แล้วถ้าเธอได้เดินไปเจอคนที่เธอแอบชอบหล่ะ เธออยากให้เขาเห็นเธอในสภาพนั้นหรอ"
             r "หรือถ้าเธอไปเดินกับเพื่อน เพื่อนๆต้องไม่อยากให้เธอมาเดินด้วยแน่ พวกเขาต่างมีสไตล์กันทั้งนั้น"
+            hide j_normal part1
+            with dissolve
+            show j_think v.2 part1
             r "โอ้ย แย่แน่ๆ เปลี่ยนทรงด่วน!"#show j_think v.2 part1
             hide r_fashion
             with dissolve
@@ -290,12 +310,18 @@ label start:
             r "(อย่างนี้เธอจะเปล่งปรั่งเปร่งประกายได้ยังไง ฉันต้องให้เธอทำทรงผมที่ดีกว่านี้อีก มันยังไม่พอหรอก)"
             menu:
                 "หนังยางมัดผมธรรมดา":
+                    hide j_think v.2 part1
+                    with dissolve
+                    show j_think v.1 part1
                     #show j_think v.1 part1
                     r "มันช่างไม่มีสีสันเอาซะเลย มัดธรรมดาเนี่ยนะ มุมมองแฟชั่นของเธอนี่ใช้ไม่ได้เลย"#r_fashion
                     hide r_fashion_glasses
                     with dissolve
                     show r_fashion
-                    r "โธ่ มันไม่วิบๆวับๆเลย ไม่ฟรุ้งฟริ้งเลยอ่ะ" 
+                    r "โธ่ มันไม่วิบๆวับๆเลย ไม่ฟรุ้งฟริ้งเลยอ่ะ"
+                    hide j_think v.1 part1
+                    with dissolve
+                    show j_think v.2 part1
                     r "อีกอย่างนะ เธอคิดดูสิ หนังยางธรรมดาแบบนี้มันจะทำลายสุขภาพผมเธอ ถ้ามัดไปนานๆผมมันก็จะหักงอ"# show j_think v.2 part1
                     r "ผมของเธอจะเป็นรอย ไม่สวย ไม่งามเลย"#r_explain
                     hide r_fashion
@@ -303,42 +329,69 @@ label start:
                     show r_explain
                     r "ผมมันจะเสียได้นะเธอ"
                     r "และถ้าเธอมัดแน่นๆ เธอก็จะปวดหัว และยิ่งถ้าเธอปวดหัวมากๆเธอก็จะเรียนไม่รู้เรื่อง ถ้าเธอเรียนไม่รู้เรื่องเธอก็จะสอบตก ถ้าเธอสอบตกเธอแย่แน่ๆ"
+                    hide j_think v.2 part1
+                    with dissolve
+                    show j_normal part1
                     j "แต่ยังไงก็ตามฉันว่ามัดรวบมันก็โอเคนะคะ"#show j_normal part1
                     hide r_explain
                     with dissolve
                     show r_shake
                     r "ไม่ ฉันไม่โอเค เธอต้องเปลี่ยนทรง"#r_shake_head
+                    hide j_normal part1
+                    with dissolve
+                    show j_think v.1 part1
                     j "งั้นจะให้ฉันทำทรงอะไรล่ะคะ"#show j_think v.1 part1
                     hide r_shake
                     with dissolve
                     show r_fireeye
                     r "ฉันให้ลอนผม"#r_fireeyes
+                    hide j_think v.1 part1
+                    with dissolve
+                    show j_interested part1
                     j "หือ? ลอนผมหรอคะ"#show j_interested part1
                     r "ใช่"
                     j "แต่ว่า..มันทำนานนะคะ"
                     r "เชื่อฉันเถอะน่า มันสวย มันเริ่ด มันเชิด ต้องจัด"
                     j "อะ อ่า.. โอเคค่ะ ลอนผมก็ลอนผม"
+                    hide j_interested part1
+                    with dissolve
+                    show j_happy part1
                     j "โอเคฉันลอนผมเลยแล้วกัน"#show j_happy part1
                 "ที่รัดผมน่ารัก":
+                    hide j_think v.2 part1
+                    with dissolve
+                    show j_normal part1
                     r "ฉันรู้นะว่าที่รัดผมนี้มันเข้ากับเธอมาก"#r_explain #show j_normal part1
                     hide r_fashion_glasses
                     with dissolve
                     show r_explain
                     r "แต่เธอก็รู้ดีนี่ว่าที่มัดผมแบบนี้มันไม่เคยพอดีกับการมัดของเธอเลย"
+                    hide j_normal part1
+                    with dissolve
+                    show j_think v.1 part1
                     r "ถ้าเธอมัดสองทบมันก็จะไม่แน่นแล้วมันก็จะหลุดโxตรสุดบ่อย สุดท้ายเธอก็ต้องมัดใหม่ทั้งวันอยู่ดี"#show j_think v.1 part1
                     r "หรือถ้าเธอมัดสามทบ มันก็จะแน่นเกินไป"
                     r "สุดท้ายเธอก็จะปวดหัว และยิ่งถ้าเธอปวดหัวมากๆเธอก็จะเรียนไม่รู้เรื่อง ถ้าเธอเรียนไม่รู้เรื่องเธอก็จะสอบตก"
                     r "ถ้าเธอสอบตกเธอแย่แน่ๆ ฉันบอกเลย"
+                    hide j_think v.1 part1
+                    with dissolve
+                    show j_normal part1
                     j "แต่ยังไงก็ตามฉันว่ามัดรวบมันก็โอเคนะคะ"#show j_normal part1
                     hide r_explain
                     with dissolve
                     show r_shake
                     r "ไม่ ฉันไม่โอเค เธอต้องเปลี่ยนทรง"#r_shake_head
+                    hide j_normal part1
+                    with dissolve
+                    show j_think v.2 part1
                     j "งั้นจะให้ฉันทำทรงอะไรล่ะคะ"#show j_think v.2 part1
                     hide r_shake
                     with dissolve
                     show r_fireeye
                     r "ฉันให้ลอนผม"#r_fireeyes
+                    hide j_think v.2 part1
+                    with dissolve
+                    show j_interested part1
                     j "หือ? ลอนผมหรอคะ"#show j_interested part1
                     r "ใช่"
                     j "แต่ว่า..มันทำนานนะคะ"
@@ -346,11 +399,17 @@ label start:
                     j "อะ อ่า.. โอเคค่ะ ลอนผมก็ลอนผม"
                     j "โอเคฉันลอนผมเลยแล้วกัน"
                 "หนังยางรัดแกง":
+                    hide j_think v.2 part1
+                    with dissolve
+                    show j_normal part1
                     r "โอ้มายก้อด เธอต้องบ้าไปแล้วแน่ๆ หนังยางรัดแกงเนี่ยนะ!"#r_fashion #show j_normal part1
                     hide r_fashion_glasses
                     with dissolve
                     show r_fashion
                     r "ขอร้องทีเถอะ ถ้าเป็นอย่างนั้นเธอทำผมทรงอื่นยังดีกว่า หนังยางรัดแกงมัดคือปีศาจร้ายชัดๆ"
+                    hide j_normal part1
+                    with dissolve
+                    show j_shock part1
                     r "ปีศาจร้ายที่จะคอยกินผมของเธอ ยิ่งเธอมัดแน่นเท่าไหร่มันก็ยิ่งจะกินผมของเธอไปมากเท่านั้น!"#show j_shock part1
                     r "การแกะผมที่มัดจากหนังยางนี้มันยากยิ่งซะกว่าการสอบ GAT PAT ซะอีก เธอต้องใช้เวลาเป็นชั่วโมงแน่เพื่อที่จะแกะมัน"
                     j "แต่ยังไงก็ตามฉันว่ามัดรวบมันก็โอเคนะคะ"
@@ -358,11 +417,17 @@ label start:
                     with dissolve
                     show r_shake
                     r "ไม่ ฉันไม่โอเค เธอต้องเปลี่ยนทรง"#r_shake_head
+                    hide j_shock part1
+                    with dissolve
+                    show j_think v.2 part1
                     j "งั้นจะให้ฉันทำทรงอะไรล่ะคะ"#show j_think v.2 part1
                     hide r_shake
                     with dissolve
                     show r_fireeye
-                    r "ฉันให้ลอนผม"#r_fireeyes 
+                    r "ฉันให้ลอนผม"#r_fireeyes
+                    hide j_think v.2 part1
+                    with dissolve
+                    show j_interested part1
                     j "หือ? ลอนผมหรอคะ"#show j_interested part1
                     r "ใช่"
                     j "แต่ว่า..มันทำนานนะคะ"
@@ -379,13 +444,25 @@ label start:
             show r_fashion_glasses
             r "ผมเธอจะเสีย เพราะเธอใช้ความร้อนกับผมมากเกินไป ถ้าหนีบไม่ดีผมเธออาจจะขาดก็ได้นะ" #r_fashion_glasses
             r "ผมเธอมันตรงและถ้าหนีบผมหน่ะ มันทำให้ผมเธอไม่มีวอลุ่ม มันไม่งดงามเลย เธอต้องทำทรงที่ดีกว่านี้"
+            hide j_normal part1
+            with dissolve
+            show j_shock part1
             j "ฉันสับสนไปหมดแล้วหล่ะค่ะ"#show j_shock part1
+            hide j_shock part1
+            with dissolve
+            show j_interested part1
             j "โอ้ย ฉันจะทำยังไงดี หรือว่า..ฉันจะลอนผมดีคะ"#show j_interested part1
             hide r_fashion_glasses
             with dissolve
             show r_fashion
             r "เธอมั่นใจแล้วหรอว่าเธอจะลอนผมหน่ะ มันทั้งร้อน ทำบ่อยๆผมก็เสีย มันไม่ดีหรอกนะเชื่อฉันสิ" #r_fashion
+            hide j_interested part1
+            with dissolve
+            show j_think v.1 part1
             j "แต่ว่ามันจะไม่มีเวลาแล้วนะ"#show j_think v.1 part1
+            hide j_think v.1 part1
+            with dissolve
+            show j_normal part1
             j "ฉันว่าทรงนี้แหละ เหมาะกับชุดแล้วก็ลุคที่สุดแล้ว"#show j_normal part1
             hide r_fashion
             with dissolve
@@ -398,7 +475,13 @@ label start:
             hide r_fallear
             with dissolve
             show r_normal
+            hide j_normal part1
+            with dissolve
+            show j_think v.1 part1
             j "เอ๊ะ แต่มันก็ใช้ความร้อนเหมือนกันนี่นา แต่ทำไมยอมง่ายจังแฮะ"#show j_think v.1 part1
+            hide j_think v.1 part1
+            with dissolve
+            show j_happy part1
             j "ช่างเถอะ สายแล้วๆ โอเคฉันลอนผมเลยแล้วกัน"#show j_happy part1
     stop music fadeout 0.5
             
