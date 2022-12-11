@@ -228,6 +228,13 @@ image r_dad = "r_dad.png"
 
 image r_aunt = "r_aunt.png"
 
+image r_happy:
+    "r_happy1.png"
+    pause 0.4
+    "r_happy2.png"
+    pause 0.4
+    repeat
+
 # The game starts here.
 
     # Show a background. This uses a placeholder by default, but you can
@@ -236,13 +243,14 @@ image r_aunt = "r_aunt.png"
     #เพิ่ม credit front ท้ายเกม
 
 label start:
-    play music "audio/start label music audio.mp3" volume 0.1
+    play music "audio/start label music audio.mp3" loop volume 0.1
     scene bg_dressuproom
     with fade
     #scene bg_dressuproom
     'เช้าวันหนึ่งของสาวน้อยที่ชื่อว่าJoseph'
     j "เอ๋ วันนี้จะแต่งตัวยังไงดีนะ"
     j "ใส่ตัวนี้แล้วกัน น่าจะเข้ากับบรรยากาศวันนี้นะ"
+    play sound 'audio/ping.mp3' volume 0.5
     j "โอ้ 7 โมงแล้วหรอเนี่ย "
     j "โอเคๆ งั้นถึงเวลาที่ต้องทำผมแล้วสินะคะ"
     j "ไหน ดูซิ ทำผมทรงอะไรดีนะวันนี้"
@@ -444,7 +452,9 @@ label start2:
                     hide r_swing
                     with dissolve
                     show r_ambulance
+                    play sound "audio/Ambulance  Sound (1).mp3" volume 1
                     r 'จากการที่เธอจะไปโรงเรียน ได้ไปโรงบาลแทนแน่'
+                    stop sound
                     $ score += 1
                 'เธอจะไม่ผ่านวิชาเพราะไปโรงเรียนสาย':
                     #show j_feel bad part2
@@ -597,6 +607,10 @@ label start2:
         # This ends the game.
 label start3:
     $ score = 0
+    scene bg_classroom_all
+    with fade
+    #เพิ่มฉาก
+    show r_normal
     #school
     j 'ฟู่ว เหนื่อยแต่ก็มาทันเวลาด้วยล่ะค่ะ'#show j_normal part3
     r 'เก่งมากสาวน้อย เข้าห้องเรียนกันเถอะ'

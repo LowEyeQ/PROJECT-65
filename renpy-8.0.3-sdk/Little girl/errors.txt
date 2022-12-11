@@ -2,21 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 497: end of line expected.
-(Perhaps you left out a ' at the end of the first line.)
-    j 'ตะ แต่ว่า
-                        hide r_cry_big
-                        with dissolve
-                        show r_cool
-                        r 'ไม่! มี! แต่!'
-                               ^
-                        hide r_cool
-                        with dissolve
-                        show r_cry
-                        r 'ข้อเสียนี่ยังไม่หมดนะ เพื่อนที่รักเธอ และเพื่อนที่เธอรักอีกล่ะ ไหนจะความใฝ่ฝันของเธอที่ตั้งเป้าไว้ว่าจะทำให้สำเร็จ'
-                        r 'แล้วถ้าเธอตัดสินใจเลือกวินมอไซค์ แล้วเกิดอะไรขึ้นมา สิ่งที่ตั้งเป้าจะทำให้สำเร็จ เธออาจจะทำให้สำเร็จไม่ได้อีกเลยนะ'
-                        # damage joseph
-                        # show joseph's little sad
+File "game/script.rpy", line 246: play requires a file
+    play sound 
+               ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Dec 11 16:29:36 2022
+Sun Dec 11 18:44:22 2022
