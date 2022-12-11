@@ -719,7 +719,6 @@ label start3:
             r 'และไม่มีที่ไหนรับคนคะแนนน้อยเข้าทำงานแน่นอนนนนนน'#j_start scared part3 
             j 'ฮือ นี่มันทำฉันรู้สึกแย่จนปวดท้องไปหมดแล้ว' #j_scared that it ppb happend part3 
             r 'สาวน้อยคนนี้จะเป็นที่จดจำในงานเลี้ยงรุ่น'
-            stop sound
             $ score += 1
         'ครอบครัว':
             hide r_spirit_out
@@ -779,7 +778,6 @@ label start3:
                     r 'เราแค่ป้องกันกรณีที่ร้ายแรงที่สุด คือพวกเขาจะห้ามไม่ให้เธอทำงานอดิเรกอีกเลย'
                     r 'ไม่มีนิยายให้เธออ่าน ทุกอย่างถูกกีดกัน เพื่อให้เธอมีเวลาโฟกัสกับเรื่องการเรียนให้มากที่สุด'
                     j 'นั่นมันแย่มาก ฉันจะไม่บอกพวกเขาเด็ดขาดเลย'
-                    stop sound
                     $ score += 1
         'คนที่แอบชอบ':
             hide r_spirit_out
@@ -802,13 +800,13 @@ label start3:
                     with dissolve
                     show r_behind
                     r 'ดูท่าทีเหงาหงอยนั่นสิ ไม่เป็นไรนะฉันจะอยู่กับเธอเอง'
-                    stop sound
                     $ score += 1
-    play music "audio/start label music audio.mp3" loop volume 0.25
+    #play music "audio/start label music audio.mp3" loop volume 0.25
     if score >= 1:
+        play sound "audio/label 2.mp3" fadein 7.0
         menu:
             'Toxic Level Up':
-                play sound "audio/rabbit transform.mp3" volume 0.5
+                #play sound "audio/rabbit transform.mp3" volume 0.5
                 r 'ฉันฟันธงเลยว่าเธอคงอยากจะลาออกแน่นอน เป็นสาวน้อยที่แย่จังเลยน้าาา'
                 with dissolve
                 show r_smile_angry
@@ -822,13 +820,15 @@ label start3:
                 with dissolve
                 show r_scared
                 r 'อยู่ในห้องตลอดไป!!!!'
+                stop sound fadeout 2.0
                 # show j_dead part3
                 jump finish3
     else:
         #show rabbit lose
+        #play music "audio/start label music audio.mp3" loop volume 0.25
         jump start4
 label finish3:
-    play music "audio/start label music audio.mp3" loop volume 0.25
+    #play music "audio/start label music audio.mp3" loop volume 0.25
     with dissolve
     show r_normal
     j 'ฉันไม่ควรบอกวามจริงกับทุกคน'# #j_cry part3
@@ -839,6 +839,7 @@ label finish3:
     # This ends the game
 
 label start4:
+    play music "audio/start label music audio.mp3" loop volume 0.25
     # bedroom
     j 'จบภารกิจของวันนี้แล้วสินะคะ'#show j_relax part4
     r 'ได้เวลานอนกันแล้ว มีความฝันที่อยากได้มั๊ยสาวน้อย'
