@@ -234,6 +234,7 @@ image r_aunt = "r_aunt.png"
     # images directory to show it.
     #เพิ่ม credit front ท้ายเกม
 label start:
+    play music "audio/start label music audio.mp3" volume 0.1
     j "เอ๋ วันนี้จะแต่งตัวยังไงดีนะ"
     j "ใส่ตัวนี้แล้วกัน น่าจะเข้ากับบรรยากาศวันนี้นะ"
     j "โอ้ 7 โมงแล้วหรอเนี่ย "
@@ -276,15 +277,13 @@ label start:
             r "เอาอย่างนั้นก็ได้ ฉันว่ามันก็ไม่ได้แย่เท่าไหร่"
             j "เอ๊ะ แต่มันก็ใช้ความร้อนเหมือนกันนี่นา แต่ทำไมยอมง่ายจังแฮะ"
             j "ช่างเถอะ สายแล้วๆ โอเคฉันลอนผมเลยแล้วกัน"
+    stop music fadeout 0.5
 label start2:
     $ score = 0
     scene road
     #เพิ่มฉาก
-
     show eileen happy #เดินเข้ามา
-
     # script
-
     j "จัดผมก็ได้ใช้เวลาไปสักพักแล้ว วันนี้จะเดินทางยังไงดีนะ"
     menu:
         'รถเมล์':
