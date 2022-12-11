@@ -2,25 +2,21 @@
 errors listed below, and try again.
 
 
-File "game/check.rpy", line 29: Line is followed by a block, despite not being a menu choice. Did you forget a colon at the end of the line?
-    'อาจารย์'
-             ^
+File "game/script.rpy", line 278: expected statement.
+    music fadeout 1.0
+                   ^
 
-File "game/check.rpy", line 93: expected statement.
-    'Toxic Level Up':
-                    ^
+File "game/script.rpy", line 296: expected statement.
+    music fadeout 1.0
+                   ^
 
-File "game/check.rpy", line 125: Line is indented, but the preceding say statement statement does not expect a block. Please check this line's indentation.
-    menu:
-    ^
+File "game/script.rpy", line 312: expected statement.
+    music fadeout 1.0
+                   ^
 
-File "game/check.rpy", line 248: expected statement.
-    ..ก๊อก ก๊อก..
-    ^
-
-File "game/script.rpy", line 218: expected statement.
-    'Toxic Level Up':
-                    ^
+File "game/script.rpy", line 325: expected statement.
+    music fadeout 1.0
+                   ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Mon Nov 28 21:03:56 2022
+Sun Dec 11 14:35:42 2022

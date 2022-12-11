@@ -78,3 +78,5 @@ Display Info: None
 Screen sizes: virtual=(800, 600) physical=(745, 559) drawable=(745, 559)
 >>>>>>> 689d145b9850fe16bf55fa9a66b33c82acf5131f
 Maximum texture size: 4096x4096
+Screen sizes: virtual=(800, 600) physical=(958, 981) drawable=(958, 981)
+Maximum texture size: 4096x4096
