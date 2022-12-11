@@ -614,7 +614,7 @@ label start2:
         # This ends the game.
 label start3:
     $ score = 0
-    scene bg_classroom_all
+    scene bg_school
     with fade
     #เพิ่มฉาก
     show r_normal
@@ -625,6 +625,8 @@ label start3:
     j 'ฟู่ว เหนื่อยแต่ก็มาทันเวลาด้วยล่ะค่ะ'#show j_normal part3
     r 'เก่งมากสาวน้อย เข้าห้องเรียนกันเถอะ'
     #classroom
+    scene bg_classroom_all
+    with fade
     ch 'นักเรียนจ๊ะ คะแนนสอบย่อยครั้งที่แล้วออกแล้วนะจ๊ะ'
     j 'เอ๊ะ!'
     ch 'พอครูเรียกชื่อแล้วก็ออกมารับนะจ๊ะ เด็กชายสมชาย...เด็กหญิงโฟกัส'
