@@ -620,6 +620,8 @@ label start3:
     show r_normal
     with zoomin
     #school
+    show j_normal part3
+    with zoomin
     j 'ฟู่ว เหนื่อยแต่ก็มาทันเวลาด้วยล่ะค่ะ'#show j_normal part3
     r 'เก่งมากสาวน้อย เข้าห้องเรียนกันเถอะ'
     #classroom
@@ -635,6 +637,9 @@ label start3:
     j 'ฉันเคยคิดว่าที่บ้านเขาต้องชอบกินขนุนมากแน่เลยถึงตั้งชื่อว่าแจ๊คฟรุ๊ต'
     ch 'เด็กหญิงโจเซฟ'
     j 'ตาฉันแล้วค่ะ'
+    hide j_normal part3
+    with dissolve
+    show j_give her score part3
     #j_give her score part3 
     j 'ฟู่ว ใจเต้นแรงไปหมดเลยค่ะ'
     hide r_swing
@@ -643,14 +648,26 @@ label start3:
     r 'รีบๆดูเร็วๆๆๆ'
     j 'โอเค นับ 3...2'
     r 'ฮึ่ยยย'
+    hide j_give her score part3
+    with dissolve
+    show j_see scored first part3
     j '1....!!!'#j_see scored first part3 
-    j 'ทำไมมัน...'#j_see scored second part3 
+    hide j_see scored first part3
+    with dissolve
+    show j_see scored second part3
+    j 'ทำไมมัน...'#j_see scored second part3
+    hide j_see scored second part3
+    with dissolve
+    show j_shocked her score part3 
     j 'ออกมาเป็นแบบนี้ล่ะคะ'#j_shocked her score part3 
     hide r_swing_speed
     with dissolve
     show r_spirit_out
     r 'โอ้วตายแล้ว งานนี้แย่แน่ๆ'
     j 'มะ ไม่ขนาดนั้นหรอกค่ะ..'
+    hide j_shocked her score part3
+    with dissolve
+    show j_talk wit rabbit part3
     #j_talk with rabbit part3 
     r 'ไม่ มันขนาดนั้นแหละ คิดดูสิมันจะเกิดอะไรขึ้นถ้าทุกคนรู้ว่าเธอได้เกรดเท่านี้'
     j 'เกรดมันก็แค่..ไม่ๆ ทุกคนไม่ใจร้ายขนาดนั้นหรอกค่ะ'
@@ -731,6 +748,7 @@ label start3:
             r 'พ่อกับแม่คงเหนื่อยกับยัยหนูนั่นแย่เลยสินะเนี่ย ฮี่ๆๆๆๆ'
             menu :
                 'บอกครอบครัว':
+                    hide r_aunt
                     show r_smile
                     with dissolve
                     #j_ralax part3
@@ -744,6 +762,7 @@ label start3:
                     j 'แต่จริงๆแล้วไม่ใช่ว่าคุณป้าทุกคนจะใจร้ายเสมอไปนะคะ'
                     $ score += 0
                 'ครอบครัวคงไม่เข้าใจ':
+                    hide r_aunt
                     show r_spirit_out
                     with dissolve
                     j 'พวกท่านต้องไม่เข้าใจแน่ค่ะ'#j_scared that it ppb happend part3 
