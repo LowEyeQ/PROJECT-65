@@ -269,11 +269,14 @@ label start:
         "มัดรวบ":
             hide r_lookup
             with dissolve
-            show r_fashion_glasses
+            show r_fashion
             r "เธอจะดูไร้ตัวตนมากเลยนะ ถ้าเธอมัดรวบหน่ะ คนอื่นเขาจะมองว่าการมัดรวบหน่ะมันธรรมดามากเลยน่ะสิ คนส่วนใหญ่ก็มัดรวบกันทั้งนั้น" #r_fashion_glasses
             r "มันช่างดูไม่มีสไตล์ที่โดดเด่นเอาซะเลย แล้วถ้าเธอได้เดินไปเจอคนที่เธอแอบชอบหล่ะ เธออยากให้เขาเห็นเธอในสภาพนั้นหรอ"
             r "หรือถ้าเธอไปเดินกับเพื่อน เพื่อนๆต้องไม่อยากให้เธอมาเดินด้วยแน่ พวกเขาต่างมีสไตล์กันทั้งนั้น"
             r "โอ้ย แย่แน่ๆ เปลี่ยนทรงด่วน!"
+            hide r_fashion
+            with dissolve
+            show r_fashion_glasses
             r "(อย่างนี้เธอจะเปล่งปรั่งเปร่งประกายได้ยังไง ฉันต้องให้เธอทำทรงผมที่ดีกว่านี้อีก มันยังไม่พอหรอก)"
             menu:
                 "หนังยางมัดผมธรรมดา":
@@ -359,25 +362,31 @@ label start:
                     j "อะ อ่า.. โอเคค่ะ ลอนผมก็ลอนผม"
                     j "โอเคฉันลอนผมเลยแล้วกัน"
         "หนีบผม":
-            r "ผมเธอจะเสีย เพราะเธอใช้ความร้อนกับผมมากเกินไป ถ้าหนีบไม่ดีผมเธออาจจะขาดก็ได้นะ" #r_fashion_glasses
             hide r_lookup
             with dissolve
             show r_fashion_glasses
+            r "ผมเธอจะเสีย เพราะเธอใช้ความร้อนกับผมมากเกินไป ถ้าหนีบไม่ดีผมเธออาจจะขาดก็ได้นะ" #r_fashion_glasses
             r "ผมเธอมันตรงและถ้าหนีบผมหน่ะ มันทำให้ผมเธอไม่มีวอลุ่ม มันไม่งดงามเลย เธอต้องทำทรงที่ดีกว่านี้"
             j "ฉันสับสนไปหมดแล้วหล่ะค่ะ"
             j "โอ้ย ฉันจะทำยังไงดี หรือว่า..ฉันจะลอนผมดีคะ"
-            r "เธอมั่นใจแล้วหรอว่าเธอจะลอนผมหน่ะ มันทั้งร้อน ทำบ่อยๆผมก็เสีย มันไม่ดีหรอกนะเชื่อฉันสิ" #r_fashion
             hide r_fashion_glasses
             with dissolve
             show r_fashion
+            r "เธอมั่นใจแล้วหรอว่าเธอจะลอนผมหน่ะ มันทั้งร้อน ทำบ่อยๆผมก็เสีย มันไม่ดีหรอกนะเชื่อฉันสิ" #r_fashion
             j "แต่ว่ามันจะไม่มีเวลาแล้วนะ"
             j "ฉันว่าทรงนี้แหละ เหมาะกับชุดแล้วก็ลุคที่สุดแล้ว"
-            r "คิดสิ คิดสิ คิดสิ ทำอะไรดี ทำอะไรดี ทำอะไรดี" 
-            r "เอาอย่างนั้นก็ได้ ฉันว่ามันก็ไม่ได้แย่เท่าไหร่" #r_normal
             hide r_fashion
             with dissolve
+            show r_swing_speed
+            r "คิดสิ คิดสิ คิดสิ ทำอะไรดี ทำอะไรดี ทำอะไรดี"
+            hide r_swing_speed
+            with dissolve
+            show r_fallear
+            r "เอาอย่างนั้นก็ได้ ฉันว่ามันก็ไม่ได้แย่เท่าไหร่" #r_normal
+            hide r_fallear
+            with dissolve
             show r_normal
-            j "เอ๊ะ แต่มันก็ใช้ความร้อนเหมือนกันนี่นา แต่ทำไมยอมง่ายจังแฮะ"#
+            j "เอ๊ะ แต่มันก็ใช้ความร้อนเหมือนกันนี่นา แต่ทำไมยอมง่ายจังแฮะ"##
             j "ช่างเถอะ สายแล้วๆ โอเคฉันลอนผมเลยแล้วกัน"
     stop music fadeout 0.5
             
@@ -397,17 +406,17 @@ label start2:
             play sound "audio/traffic jam.mp3" volume 0.3
             hide r_normal
             with dissolve
-            show r_look_up
+            show r_lookup
             r "ฉันถามจริง? เธอก็รู้ตารางรถเมล์ไม่ใช่หรอ"
             j 'รู้ค่ะ'#show j_happy part2
-            hide r_look_up
+            hide r_lookup
             with dissolve
             show r_repressed
             r 'รถเมล์เคยมาตรงเวลาซะที่ไหนล่ะ นี่อาจจะทำให้เธอมานั่งรอรถเมล์อย่างเสียเวลาเปล่าก็ได้!!!!'
             j 'ฉันว่าฉันคงจะไม่โชคร้ายขนาดที่ว่ารอครึ่งชั่วโมงหรอกมั้งคะ'
             hide r_repressed
             with dissolve
-            show r_look_up
+            show r_lookup
             r 'ถ้าเธอจะคิดในแง่ดีแบบนั้น'
             stop sound
             menu:
@@ -415,7 +424,7 @@ label start2:
                     #show j_feel bad part2
                     r 'งั้นถ้ามีรถเมล์ ก็คงจะเบียดเป็นปลากระป๋อง'
                     r 'แดดร้อนๆ คนเยอะๆ กลิ่นจะเป็นยังไงกันนะ'
-                    hide r_look_up
+                    hide r_lookup
                     with dissolve
                     show r_spirit_out
                     r 'ใช่! เหม็น! มันเหม็นนนน เธอตัวจะเหม็นนนนนนนน'#show j_start shock
@@ -424,7 +433,7 @@ label start2:
                 'เธอจะตายเพราะขาดออกซิเจน!':
                     #show j_feel bad part2
                     r 'งั้นถ้ามีรถเมล์ ก็คงจะเบียดเป็นปลากระป๋อง'
-                    hide r_look_up
+                    hide r_lookup
                     with dissolve
                     show r_swing
                     r 'ไม่มีที่นั่งอีก เธอต้องยืนจนขาเมื่อย ปวดขาตั้งแต่หัววัน'
@@ -440,7 +449,7 @@ label start2:
                 'เธอจะไม่ผ่านวิชาเพราะไปโรงเรียนสาย':
                     #show j_feel bad part2
                     # show clock rabbit
-                    hide r_look_up
+                    hide r_lookup
                     with dissolve
                     show r_clock
                     play sound "audio/clock ticking.mp3" volume 0.7
@@ -512,7 +521,6 @@ label start2:
                 show r_swing
                 r 'เสียเวลา อันตราย​ เสียเวลา อันตราย เสียเวลา อันตราย เสียเวลา อันตราย​ เสียเวลา อันตราย เสียเวลา อันตราย เสียเวลา อันตรายยยยย'
                 jump finish2
-                $ renpy.movie_cutscene('win.avi')
             else:
                 #show rabbit lose
                 jump start3
