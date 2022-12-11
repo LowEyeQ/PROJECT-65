@@ -160,6 +160,73 @@ image r_normal_big:
 
 image r_rip = "r_rip.png"
 
+image hair_curler = 'bg_hair_curler.png'
+
+image r_smile_angry:
+    "r_smile_angry1.png"
+    pause 0.4
+    "r_smile_angry2.png"
+    pause 0.4
+    repeat
+
+image r_smile_angry:
+    "r_smile_angry1.png"
+    pause 0.4
+    "r_smile_angry2.png"
+    pause 0.4
+    repeat
+
+image r_sparkling_eye:
+    "r_sparkling_eye1.png"
+    pause 0.4
+    "r_sparkling_eye2.png"
+    pause 0.4
+    repeat
+
+image r_shock:
+    "r_shock1.png"
+    pause 0.4
+    "r_shock2.png"
+    pause 0.4
+    repeat
+
+image r_cry_little:
+    "r_cry_little1.png"
+    pause 0.3
+    "r_cry_little2.png"
+    pause 0.3
+    "r_cry_little3.png"
+    pause 0.3
+    "r_cry_little4.png"
+    pause 0.3
+    "r_cry_little5.png"
+    pause 0.3
+    "r_cry_little6.png"
+    pause 0.3
+    repeat
+
+image r_scared_little:
+    "r_scared_little1.png"
+    pause 0.4
+    "r_scared_little2.png"
+    pause 0.4
+    repeat
+
+image r_huh:
+    "r_huh1.png"
+    pause 0.4
+    "r_huh2.png"
+    pause 0.4
+    repeat
+
+image r_behind = "r_behind.png"
+
+image r_j = "r_j.png"
+
+image r_dad = "r_dad.png"
+
+image r_aunt = "r_aunt.png"
+
 # The game starts here.
 
     # Show a background. This uses a placeholder by default, but you can
