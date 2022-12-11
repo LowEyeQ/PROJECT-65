@@ -243,7 +243,7 @@ image r_happy:
     #เพิ่ม credit front ท้ายเกม
 
 label start:
-    play music "audio/start label music audio.mp3" loop volume 0.1
+    play music "audio/start label music audio.mp3" loop volume 0.25
     scene bg_dressuproom
     with fade
     #scene bg_dressuproom
@@ -402,7 +402,7 @@ label start:
     stop music fadeout 0.5
             
 label start2:
-    play music "audio/start label music audio.mp3" loop volume 0.1
+    play music "audio/start label music audio.mp3" loop volume 0.25
     $ score = 0
     scene bg_bus_stop
     with fade
@@ -613,6 +613,7 @@ label start2:
         j 'ฮือ ทำไมฉันต้องมากลัวเรื่องพวกนี้ด้วย'#show j_cry part2
         # This ends the game.
 label start3:
+    play music "audio/start label music audio.mp3" loop volume 0.25
     $ score = 0
     scene bg_classroom_all
     with fade
@@ -636,6 +637,7 @@ label start3:
     ch 'เด็กหญิงโจเซฟ'
     j 'ตาฉันแล้วค่ะ'
     #j_give her score part3 
+    play sound "audio/heart beat.mp3" loop volume 1.0
     j 'ฟู่ว ใจเต้นแรงไปหมดเลยค่ะ'
     hide r_swing
     with dissolve
@@ -643,7 +645,10 @@ label start3:
     r 'รีบๆดูเร็วๆๆๆ'
     j 'โอเค นับ 3...2'
     r 'ฮึ่ยยย'
-    j '1....!!!'#j_see scored first part3 
+    j '1....!!!'#j_see scored first part3
+    stop sound
+    stop music fadeout 2.0
+    play sound "audio/label 2.mp3" fadein 7.0
     j 'ทำไมมัน...'#j_see scored second part3 
     j 'ออกมาเป็นแบบนี้ล่ะคะ'#j_shocked her score part3 
     hide r_swing_speed
@@ -673,6 +678,7 @@ label start3:
             j 'ฉันเชื่อว่าอาจารย์ไม่ใจร้ายขนาดนั้นหรอกค่ะ เขามีบทบาทที่จะทำให้พวกเราเป็นคนที่ดีขึ้น เราต้องให้ใจกับเขาด้วย'#j_ralax part3
             r 'ตามใจเธอก็แล้วกัน'
             j 'ตั้งใจเรียนกันเถอะค่ะ'
+            stop sound
             $ score += 0
         'เพื่อน':
             hide r_spirit_out
@@ -694,6 +700,7 @@ label start3:
             r 'และไม่มีที่ไหนรับคนคะแนนน้อยเข้าทำงานแน่นอนนนนนน'#j_start scared part3 
             j 'ฮือ นี่มันทำฉันรู้สึกแย่จนปวดท้องไปหมดแล้ว' #j_scared that it ppb happend part3 
             r 'สาวน้อยคนนี้จะเป็นที่จดจำในงานเลี้ยงรุ่น'
+            stop sound
             $ score += 1
         'ครอบครัว':
             hide r_spirit_out
@@ -742,6 +749,7 @@ label start3:
                     j 'ฉันจะเป็นอีก 10 เปอร์เซ็นต์ที่เหลือเองค่ะ'
                     r 'เธอท้าทายอำนาจมืดแล้วล่ะ'
                     j 'แต่จริงๆแล้วไม่ใช่ว่าคุณป้าทุกคนจะใจร้ายเสมอไปนะคะ'
+                    stop sound
                     $ score += 0
                 'ครอบครัวคงไม่เข้าใจ':
                     show r_spirit_out
@@ -750,6 +758,7 @@ label start3:
                     r 'เราแค่ป้องกันกรณีที่ร้ายแรงที่สุด คือพวกเขาจะห้ามไม่ให้เธอทำงานอดิเรกอีกเลย'
                     r 'ไม่มีนิยายให้เธออ่าน ทุกอย่างถูกกีดกัน เพื่อให้เธอมีเวลาโฟกัสกับเรื่องการเรียนให้มากที่สุด'
                     j 'นั่นมันแย่มาก ฉันจะไม่บอกพวกเขาเด็ดขาดเลย'
+                    stop sound
                     $ score += 1
         'คนที่แอบชอบ':
             hide r_spirit_out
@@ -765,14 +774,17 @@ label start3:
                     show r_look_up
                     j 'ไม่หรอกค่ะ ไม่แน่ฉันอาจจะขอเข้าร่วมการติวในครั้งหน้าด้วย'
                     r 'เพ้อฝันจริงๆเลยยัยเด็กคนนี้'
+                    stop sound
                     $ score += 0
                 'ตัดใจ':
                     #j_scared that it ppb happen part3 
                     with dissolve
                     show r_behind
                     r 'ดูท่าทีเหงาหงอยนั่นสิ ไม่เป็นไรนะฉันจะอยู่กับเธอเอง'
+                    stop sound
                     $ score += 1
-    if score > 1:
+    play music "audio/start label music audio.mp3" loop volume 0.25
+    if score >= 1:
         menu:
             'Toxic Level Up':
                 play sound "audio/rabbit transform.mp3" volume 0.5
@@ -795,6 +807,7 @@ label start3:
         #show rabbit lose
         jump start4
 label finish3:
+    play music "audio/start label music audio.mp3" loop volume 0.25
     with dissolve
     show r_normal
     j 'ฉันไม่ควรบอกวามจริงกับทุกคน'# #j_cry part3
