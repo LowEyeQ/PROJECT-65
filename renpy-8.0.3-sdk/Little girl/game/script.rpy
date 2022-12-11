@@ -228,6 +228,13 @@ image r_dad = "r_dad.png"
 
 image r_aunt = "r_aunt.png"
 
+image r_happy:
+    "r_happy1.png"
+    pause 0.4
+    "r_happy2.png"
+    pause 0.4
+    repeat
+
 # The game starts here.
 
     # Show a background. This uses a placeholder by default, but you can
