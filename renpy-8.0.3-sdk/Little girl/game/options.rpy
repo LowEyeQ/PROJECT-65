@@ -208,3 +208,4 @@ init python:
 ## by a slash.
 
 # define build.itch_project = "renpytom/test-project"
+    # activate_sound = "audio/click-typewritersoftclick.mp3"
