@@ -1,10 +1,15 @@
+<<<<<<< HEAD
 Sun Dec 11 16:31:47 2022
+=======
+Sun Dec 11 15:10:27 2022
+>>>>>>> 69fb6aecfe32d10d1493389663d205a96cc1b0f1
 Windows-10-10.0.22000
 Ren'Py 8.0.3.22090809
  
 
-Bootstrap to the start of init.init took 0.03s
+Bootstrap to the start of init.init took 0.05s
 Early init took 0.00s
+<<<<<<< HEAD
 Loader init took 0.02s
 Loading error handling took 0.02s
 Loading script took 0.26s
@@ -13,36 +18,63 @@ Loading persistent took 0.00s
 Set script version to: None (alternate path)
 Running init code took 0.28s
 Loading analysis data took 0.01s
+=======
+Loader init took 0.04s
+Loading error handling took 0.03s
+Loading script took 0.37s
+Loading save slot metadata. took 0.00s
+Loading persistent took 0.00s
+Set script version to: None (alternate path)
+Running init code took 0.38s
+Loading analysis data took 0.02s
+>>>>>>> 69fb6aecfe32d10d1493389663d205a96cc1b0f1
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Dump and make backups. took 0.00s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.02s
+Initial gc. took 0.03s
 DPI scale factor: 1.250000
 nvdrs: Loaded, about to disable thread optimizations.
+<<<<<<< HEAD
 nvdrs: Disabled thread optimizations.
 Creating interface object took 0.17s
+=======
+nvdrs: b"Couldn't load nvlib." (can be ignored)
+Creating interface object took 0.00s
+>>>>>>> 69fb6aecfe32d10d1493389663d205a96cc1b0f1
 Cleaning stores took 0.00s
 Init translation took 0.02s
 Build styles took 0.00s
-Load screen analysis took 0.02s
+Load screen analysis took 0.04s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.04s
+Prepare screens took 0.08s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
 Running _start took 0.00s
 Performance test:
+<<<<<<< HEAD
 Interface start took 0.05s
+=======
+Interface start took 0.09s
+>>>>>>> 69fb6aecfe32d10d1493389663d205a96cc1b0f1
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
 swap interval: 1 frames
 Windowed mode.
+<<<<<<< HEAD
 Vendor: "b'NVIDIA Corporation'"
 Renderer: b'NVIDIA GeForce RTX 3050 Ti Laptop GPU/PCIe/SSE2'
 Version: b'4.6.0 NVIDIA 513.38'
 Display Info: None
 Screen sizes: virtual=(800, 600) physical=(1303, 978) drawable=(1303, 978)
+=======
+Vendor: "b'ATI Technologies Inc.'"
+Renderer: b'AMD Radeon(TM) Graphics'
+Version: b'4.6.14802 Compatibility Profile Context 21.40.46 30.0.14046.0'
+Display Info: None
+Screen sizes: virtual=(800, 600) physical=(957, 718) drawable=(957, 718)
+>>>>>>> 69fb6aecfe32d10d1493389663d205a96cc1b0f1
 Maximum texture size: 4096x4096
