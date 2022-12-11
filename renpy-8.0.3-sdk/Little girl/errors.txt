@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 262: play requires a file
-    play sound 
-               ^
+File "game/script.rpy", line 823: expected simple expression
+    stop sound fadeout 
+                       ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Dec 11 18:51:17 2022
+Sun Dec 11 20:21:38 2022
