@@ -228,6 +228,13 @@ image r_dad = "r_dad.png"
 
 image r_aunt = "r_aunt.png"
 
+image r_happy:
+    "r_happy1.png"
+    pause 0.4
+    "r_happy2.png"
+    pause 0.4
+    repeat
+
 # The game starts here.
 
     # Show a background. This uses a placeholder by default, but you can
@@ -600,6 +607,10 @@ label start2:
         # This ends the game.
 label start3:
     $ score = 0
+    scene bg_classroom_all
+    with fade
+    #เพิ่มฉาก
+    show r_normal
     #school
     j 'ฟู่ว เหนื่อยแต่ก็มาทันเวลาด้วยล่ะค่ะ'#show j_normal part3
     r 'เก่งมากสาวน้อย เข้าห้องเรียนกันเถอะ'
