@@ -503,8 +503,8 @@ label start2:
                 with dissolve
                 show r_swing
                 r 'เสียเวลา อันตราย​ เสียเวลา อันตราย เสียเวลา อันตราย เสียเวลา อันตราย​ เสียเวลา อันตราย เสียเวลา อันตราย เสียเวลา อันตรายยยยย'
-                #show rabbit win
                 jump finish2
+                $ renpy.movie_cutscene('win.avi')
             else:
                 #show rabbit lose
                 jump start3
