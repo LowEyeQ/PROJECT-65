@@ -236,7 +236,7 @@ image r_aunt = "r_aunt.png"
     #เพิ่ม credit front ท้ายเกม
 
 label start:
-    play music "audio/start label music audio.mp3" volume 0.1 fadeout 2.0
+    play music "audio/start label music audio.mp3" loop volume 0.1 fadeout 2.0
     j "เอ๋ วันนี้จะแต่งตัวยังไงดีนะ"
     j "ใส่ตัวนี้แล้วกัน น่าจะเข้ากับบรรยากาศวันนี้นะ"
     j "โอ้ 7 โมงแล้วหรอเนี่ย "
@@ -275,7 +275,6 @@ label start:
                     j "แต่ว่า..มันทำนานนะคะ"
                     r "เชื่อฉันเถอะน่า มันสวย มันเริ่ด มันเชิด ต้องจัด"
                     j "อะ อ่า.. โอเคค่ะ ลอนผมก็ลอนผม"
-                    stop music fadeout 2.0
                     j "โอเคฉันลอนผมเลยแล้วกัน"
                 "ที่รัดผมน่ารัก":
                     r "ฉันรู้นะว่าที่รัดผมนี้มันเข้ากับเธอมาก"#r_explain
@@ -293,7 +292,6 @@ label start:
                     j "แต่ว่า..มันทำนานนะคะ"
                     r "เชื่อฉันเถอะน่า มันสวย มันเริ่ด มันเชิด ต้องจัด"
                     j "อะ อ่า.. โอเคค่ะ ลอนผมก็ลอนผม"
-                    stop music fadeout 2.0
                     j "โอเคฉันลอนผมเลยแล้วกัน"
                 "หนังยางรัดแกง":
                     r "โอ้มายก้อด เธอต้องบ้าไปแล้วแน่ๆ หนังยางรัดแกงเนี่ยนะ!"#r_fashion
@@ -309,7 +307,6 @@ label start:
                     j "แต่ว่า..มันทำนานนะคะ"
                     r "เชื่อฉันเถอะน่า มันสวย มันเริ่ด มันเชิด ต้องจัด"
                     j "อะ อ่า.. โอเคค่ะ ลอนผมก็ลอนผม"
-                    stop music fadeout 2.0
                     j "โอเคฉันลอนผมเลยแล้วกัน"
         "หนีบผม":
             r "ผมเธอจะเสีย เพราะเธอใช้ความร้อนกับผมมากเกินไป ถ้าหนีบไม่ดีผมเธออาจจะขาดก็ได้นะ"
@@ -322,11 +319,10 @@ label start:
             r "คิดสิ คิดสิ คิดสิ ทำอะไรดี ทำอะไรดี ทำอะไรดี"
             r "เอาอย่างนั้นก็ได้ ฉันว่ามันก็ไม่ได้แย่เท่าไหร่"
             j "เอ๊ะ แต่มันก็ใช้ความร้อนเหมือนกันนี่นา แต่ทำไมยอมง่ายจังแฮะ"
-            stop music fadeout 2.0
             j "ช่างเถอะ สายแล้วๆ โอเคฉันลอนผมเลยแล้วกัน"
             
 label start2:
-    play music "audio/label 2.mp3" volume 0.1 fadein 2.0
+    #play music "audio/label 2.mp3" volume 0.1 fadein 2.0
     $ score = 0
     scene bg_bus_stop
     with fade
@@ -338,6 +334,7 @@ label start2:
     j "จัดผมก็ได้ใช้เวลาไปสักพักแล้ว วันนี้จะเดินทางยังไงดีนะ"
     menu:
         'รถเมล์':
+            play sound "audio/traffic jam.mp3" volume 0.3
             hide r_normal
             with dissolve
             show r_look_up
@@ -352,6 +349,7 @@ label start2:
             with dissolve
             show r_look_up
             r 'ถ้าเธอจะคิดในแง่ดีแบบนั้น'
+            stop sound
             menu:
                 'เพื่อนๆจะเกลียดเธอ เพราะกลิ่นเหงื่อ':
                     r 'งั้นถ้ามีรถเมล์ ก็คงจะเบียดเป็นปลากระป๋อง'
@@ -382,11 +380,13 @@ label start2:
                     hide r_look_up
                     with dissolve
                     show r_clock
+                    play sound "audio/clock ticking.mp3" volume 0.7
                     r 'ถ้าเธอเอาแต่รอรถเมล์ รอไปเรื่อยๆ ทั้งๆที่ไม่รู้ว่าจะมาเมื่อไหร่'
                     r 'มันเสียเวลาโดยเปล่าประโยชน์ และจะทำให้เธอสาย'
                     hide r_clock
                     with dissolve
                     show r_spirit_out
+                    stop sound
                     r 'อาจารย์ก็จะหักคะแนนเธอ แล้วถ้าคะแนนเธอไม่ดี เพราะจะติด F หรือไม่ก็ไม่ผ่านวิชา'
                     hide r_spirit_out
                     with dissolve
@@ -398,6 +398,7 @@ label start2:
             if score > 0:
                 menu:
                     'Toxic Level Up':
+                        play sound "audio/rabbit transform.mp3" volume 0.5
                         hide r_ambulance
                         hide r_spirit_out
                         with zoominout
@@ -468,6 +469,7 @@ label start2:
             r '(โอ้ไม่ได้การแล้ว ถ้าเป็นแบบนี้เธอจะต้องตกอยู่ในอันตราย​แน่เลย ฉันจะต้องปกป้อง!)'
             menu:
                 'Toxic Level up':
+                    play sound "audio/rabbit transform.mp3" volume 0.5
                     hide r_fireeye
                     with zoominout
                     pause(0.5)
@@ -487,6 +489,7 @@ label start2:
                     hide r_normal_big
                     with dissolve
                     show r_cry_big
+                    play sound "audio/baddaugthermakeparentsad.mp3" volume 0.3
                     r 'เธอรู้มั้ยว่าพ่อแม่เธอจะเสียใจขนาดไหน'
                     r 'พวกท่านจะต้องโทษตัวท่านเองแน่ๆ ว่าทำไมถึงได้ปล่อยให้ลูกสุดที่รักเดินทางเอง ทำไมไม่ดูแลลูกให้ดีกว่านี้'
                     r 'เธออยากจะทำให้พวกท่านเสียใจหรอ'
@@ -499,6 +502,7 @@ label start2:
                     hide r_cool
                     with dissolve
                     show r_cry
+                    play sound "audio/baddaugthermakeparentsad.mp3" volume 0.3
                     r 'ข้อเสียนี่ยังไม่หมดนะ เพื่อนที่รักเธอ และเพื่อนที่เธอรักอีกล่ะ ไหนจะความใฝ่ฝันของเธอที่ตั้งเป้าไว้ว่าจะทำให้สำเร็จ'
                     r 'แล้วถ้าเธอตัดสินใจเลือกวินมอไซค์ แล้วเกิดอะไรขึ้นมา สิ่งที่ตั้งเป้าจะทำให้สำเร็จ เธออาจจะทำให้สำเร็จไม่ได้อีกเลยนะ'
                     # damage joseph
@@ -617,6 +621,7 @@ label start3:
     if score > 1:
         menu:
             'Toxic Level Up':
+                play sound "audio/rabbit transform.mp3" volume 0.5
                 r 'ฉันฟันธงเลยว่าเธอคงอยากจะลาออกแน่นอน เป็นสาวน้อยที่แย่จังเลยน้าาา'
                 # show smile but angry rabbit
                 r 'เงินค่าเทอมตรงนั้นสามารถเอาไปใช้ประโยชน์ได้หลายอย่างแต่เธอดันทำให้มันเสียเปล่าซะได้ ตัดสินใจผิดพลาดจริงๆ'
