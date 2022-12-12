@@ -1,15 +1,15 @@
 ﻿I'm sorry, but an uncaught exception occurred.
 
 While running game code:
-  File "game/script.rpy", line 645, in script
-    r 'รีบๆดูเร็วๆๆๆ'
-OSError: Couldn't find file 'audio/eart beat.mp3'.
+  File "game/script.rpy", line 907, in script
+    r 'ไม่ใช่เงินที่หาเธอมาด้วยตัวเองอีก ได้ยินมั๊ยว่าเงินน่ะ! เป็นของมีค่าที่ถูกเธอผลาญไปอย่างเปล่าประโยชน์'
+OSError: Couldn't find file 'audio/girlcry.mp3'.
 
 -- Full Traceback ------------------------------------------------------------
 
 Full traceback:
-  File "game/script.rpy", line 645, in script
-    r 'รีบๆดูเร็วๆๆๆ'
+  File "game/script.rpy", line 907, in script
+    r 'ไม่ใช่เงินที่หาเธอมาด้วยตัวเองอีก ได้ยินมั๊ยว่าเงินน่ะ! เป็นของมีค่าที่ถูกเธอผลาญไปอย่างเปล่าประโยชน์'
   File "C:\Users\HP\Desktop\PROJECT-65\renpy-8.0.3-sdk\renpy\ast.py", line 921, in execute
     renpy.exports.say(who, what, *args, **kwargs)
   File "C:\Users\HP\Desktop\PROJECT-65\renpy-8.0.3-sdk\renpy\exports.py", line 1373, in say
@@ -24,10 +24,8 @@ Full traceback:
     rv = renpy.game.interface.interact(roll_forward=roll_forward, **kwargs)
   File "C:\Users\HP\Desktop\PROJECT-65\renpy-8.0.3-sdk\renpy\display\core.py", line 3377, in interact
     repeat, rv = self.interact_core(preloads=preloads, trans_pause=trans_pause, pause=pause, pause_start=pause_start, pause_modal=pause_modal, **kwargs) # type: ignore
-  File "C:\Users\HP\Desktop\PROJECT-65\renpy-8.0.3-sdk\renpy\display\core.py", line 3846, in interact_core
-    renpy.audio.audio.interact()
-  File "C:\Users\HP\Desktop\PROJECT-65\renpy-8.0.3-sdk\renpy\audio\audio.py", line 1213, in interact
-    periodic()
+  File "C:\Users\HP\Desktop\PROJECT-65\renpy-8.0.3-sdk\renpy\display\core.py", line 4103, in interact_core
+    renpy.audio.audio.periodic()
   File "C:\Users\HP\Desktop\PROJECT-65\renpy-8.0.3-sdk\renpy\audio\audio.py", line 1166, in periodic
     raise_(exc[0], exc[1], exc[2])
   File "/home/tom/ab/renpy-build/tmp/install.linux-x86_64/lib/python3.9/site-packages/future/utils/__init__.py", line 441, in raise_
@@ -41,9 +39,9 @@ Full traceback:
     rv = renpy.loader.load(fn)
   File "C:\Users\HP\Desktop\PROJECT-65\renpy-8.0.3-sdk\renpy\loader.py", line 820, in load
     raise IOError("Couldn't find file '%s'." % name)
-OSError: Couldn't find file 'audio/eart beat.mp3'.
+OSError: Couldn't find file 'audio/girlcry.mp3'.
 
 Windows-10-10.0.22000 AMD64
 Ren'Py 8.0.3.22090809
 Little girl 1.0
-Sun Dec 11 19:39:33 2022
+Mon Dec 12 10:04:53 2022

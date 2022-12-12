@@ -1,40 +1,39 @@
-Sun Dec 11 20:09:59 2022
+Mon Dec 12 10:01:59 2022
 Windows-10-10.0.22000
 Ren'Py 8.0.3.22090809
  
 
-Bootstrap to the start of init.init took 0.04s
+Bootstrap to the start of init.init took 0.07s
 Early init took 0.00s
 Loader init took 0.04s
-Loading error handling took 0.03s
-Loading script took 0.37s
+Loading error handling took 0.04s
+Loading script took 0.65s
 Loading save slot metadata. took 0.01s
 Loading persistent took 0.00s
 Set script version to: None (alternate path)
-Running init code took 0.43s
-Loading analysis data took 0.02s
+Running init code took 0.61s
+Loading analysis data took 0.03s
 Analyze and compile ATL took 0.00s
 Index archives took 0.00s
 Dump and make backups. took 0.00s
 Cleaning cache took 0.00s
 Making clean stores took 0.00s
-Initial gc. took 0.03s
+Initial gc. took 0.04s
 DPI scale factor: 1.250000
 nvdrs: Loaded, about to disable thread optimizations.
 nvdrs: b"Couldn't load nvlib." (can be ignored)
 Creating interface object took 0.00s
 Cleaning stores took 0.00s
-Init translation took 0.04s
+Init translation took 0.06s
 Build styles took 0.00s
-Load screen analysis took 0.04s
+Load screen analysis took 0.07s
 Analyze screens took 0.00s
 Save screen analysis took 0.00s
-Prepare screens took 0.07s
+Prepare screens took 0.13s
 Save pyanalysis. took 0.00s
 Save bytecode. took 0.00s
 Running _start took 0.00s
-Performance test:
-Interface start took 0.09s
+PerfoPrepare screenInterface start took 0.17s
 
 Initializing gl2 renderer:
 primary display bounds: (0, 0, 1920, 1080)
@@ -44,5 +43,8 @@ Vendor: "b'ATI Technologies Inc.'"
 Renderer: b'AMD Radeon(TM) Graphics'
 Version: b'4.6.14802 Compatibility Profile Context 21.40.46 30.0.14046.0'
 Display Info: None
-Screen sizes: virtual=(800, 600) physical=(1300, 975) drawable=(1300, 975)
+Screen sizes: virtual=(800, 600) physical=(1304, 978) drawable=(1304, 978)
+Maximum texture size: 4096x4096
+ None
+Screen sizes: virtual=(800, 600) physical=(1304, 978) drawable=(1304, 978)
 Maximum texture size: 4096x4096
