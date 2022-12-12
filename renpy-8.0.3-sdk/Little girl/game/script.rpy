@@ -1431,5 +1431,6 @@ label finish4:
     j 'อะไรนะคะ!!! อีก 15 นาทีจะ 7 โมง มะ มะ ไม่นะ!!!!!!!'
     r 'ฮี่ฮี่ โทษทีนะ พึ่งนึกได้ว่าเมื่อคืนเธอลืมเสียบหัวชาร์จ'
     #The End
-    $ renpy.movie_cutscene('images/End-Creedit-final.avi')
+    
+    $ renpy.movie_cutscene('images/Kanoon.avi')
     return
