@@ -1410,7 +1410,7 @@ label finish4:
     hide r_normal
     show r_scared_little
     hide r_scared little
-    hide j_talk part4 with dissolvess
+    hide j_talk part4 with dissolve
     'กดรัน 1 ครั้งและกรุณารอสักครู่เพื่อรับชมบรรยากาศในฉากถัดไป'
     play music "audio/crow.mp3" volume 0.8 fadein 1
     scene bg_sunrise part4 with fades
@@ -1431,6 +1431,11 @@ label finish4:
     j 'อะไรนะคะ!!! อีก 15 นาทีจะ 7 โมง มะ มะ ไม่นะ!!!!!!!'
     r 'ฮี่ฮี่ โทษทีนะ พึ่งนึกได้ว่าเมื่อคืนเธอลืมเสียบหัวชาร์จ'
     #The End
-    
+    scene black with fade
+    hide bg_sunrise part4
+    hide smile
+    hide j_wake up part4
+    hide j_poor joshep part4 with dissolve
+
     $ renpy.movie_cutscene('images/Kanoon.avi')
     return
