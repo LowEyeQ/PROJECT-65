@@ -1376,6 +1376,9 @@ label finish4:
     r 'Good night little girl'
     show j_relax part4
     j 'บางทีฉันอาจจะเปลี่ยนเป็นดึงหางเจ้ากระต่ายในฝันแทน'
+    hide r_normal
+    show r_scared_little 
+    hide r_scared little
     hide j_talk part4 with dissolves
     scene bg_sunrise part4 with fades
     show j_wake up part4 with dissolves
