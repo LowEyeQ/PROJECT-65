@@ -2,9 +2,9 @@
 errors listed below, and try again.
 
 
-File "game/script.rpy", line 914: Line is indented, but the preceding play music statement statement does not expect a block. Please check this line's indentation.
-    hide r_scared
-    ^
+File "game/script.rpy", line 823: expected simple expression
+    stop sound fadeout 
+                       ^
 
 Ren'Py Version: Ren'Py 8.0.3.22090809
-Sun Dec 11 22:42:05 2022
+Sun Dec 11 20:21:38 2022

@@ -287,7 +287,6 @@ label start:
             hide r_fashion
             with dissolve
             show r_fashion_glasses
-            play sound "audio/Aha.mp3"
             r "(อย่างนี้เธอจะเปล่งปรั่งเปร่งประกายได้ยังไง ฉันต้องให้เธอทำทรงผมที่ดีกว่านี้อีก มันยังไม่พอหรอก)"
             menu:
                 "หนังยางมัดผมธรรมดา":
@@ -385,7 +384,6 @@ label start:
             hide r_fashion_glasses
             with dissolve
             show r_fashion
-            play sound "audio/Aha.mp3"
             r "เธอมั่นใจแล้วหรอว่าเธอจะลอนผมหน่ะ มันทั้งร้อน ทำบ่อยๆผมก็เสีย มันไม่ดีหรอกนะเชื่อฉันสิ" #r_fashion
             j "แต่ว่ามันจะไม่มีเวลาแล้วนะ"#show j_think v.1 part1
             j "ฉันว่าทรงนี้แหละ เหมาะกับชุดแล้วก็ลุคที่สุดแล้ว"#show j_normal part1
@@ -424,12 +422,10 @@ label start2:
             r "ฉันถามจริง? เธอก็รู้ตารางรถเมล์ไม่ใช่หรอ"
             hide j_normal part2 with dissolve
             show j_happy part2
-            play sound "audio/Aha.mp3"
             j 'รู้ค่ะ'
             hide r_lookup
             with dissolve
             show r_repressed
-            play sound "audio/angry rabbit.mp3"
             r 'รถเมล์เคยมาตรงเวลาซะที่ไหนล่ะ นี่อาจจะทำให้เธอมานั่งรอรถเมล์อย่างเสียเวลาเปล่าก็ได้!!!!'
             j 'ฉันว่าฉันคงจะไม่โชคร้ายขนาดที่ว่ารอครึ่งชั่วโมงหรอกมั้งคะ'
             hide r_repressed
@@ -668,7 +664,6 @@ label start3:
     with zoomin
     j 'ฟู่ว เหนื่อยแต่ก็มาทันเวลาด้วยล่ะค่ะ'#show j_normal part3
     r 'เก่งมากสาวน้อย เข้าห้องเรียนกันเถอะ'
-    play sound "audio/fairy glitter sound.mp3"
     #classroom
     scene bg_classroom_bg
     with fade
@@ -880,10 +875,10 @@ label start3:
                     $ score += 1
     #play music "audio/start label music audio.mp3" loop volume 0.25
     if score >= 1:
+        play sound "audio/label 2.mp3" fadein 7.0
         menu:
             'Toxic Level Up':
                 play sound "audio/rabbit transform.mp3" volume 0.5
-                play music "audio/label 2.mp3" fadein 7.0
                 hide r_lookup
                 hide r_swing
                 hide r_behind
@@ -903,10 +898,10 @@ label start3:
                 hide r_smile_angry
                 with dissolve
                 show r_scared
-                play sound "audio/Anime Girl Cry.mp3"
                 r 'ไม่ใช่เงินที่หาเธอมาด้วยตัวเองอีก ได้ยินมั๊ยว่าเงินน่ะ! เป็นของมีค่าที่ถูกเธอผลาญไปอย่างเปล่าประโยชน์'
                 r 'อนาคตคงเธอมืดบอด ไร้จุดหมายและมีปลายทางที่เตียงนอนกับหมอนเน่า ฟังดูดีหรอ ไม่เลย เธอจะกลายเป็นตัวไร้ประโยชน์ในบ้าน'
                 r 'อยู่ในห้องตลอดไป!!!!'
+                stop sound fadeout 2.0
                 # show j_dead part3
                 jump finish3
     else:
@@ -925,7 +920,7 @@ label finish3:
     # This ends the game
 
 label start4:
-    play music "audio/start label music audio.mp3" loop volume 0.3
+    play music "audio/start label music audio.mp3" loop volume 0.25
     # bedroom
     j 'จบภารกิจของวันนี้แล้วสินะคะ'#show j_relax part4
     r 'ได้เวลานอนกันแล้ว มีความฝันที่อยากได้มั๊ยสาวน้อย'
