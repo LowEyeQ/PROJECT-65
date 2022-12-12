@@ -325,6 +325,7 @@ label start:
             hide r_fashion
             with dissolve
             show r_fashion_glasses
+            play sound 'audio/Aha.mp3' volume 0.5
             r "(อย่างนี้เธอจะเปล่งปรั่งเปร่งประกายได้ยังไง ฉันต้องให้เธอทำทรงผมที่ดีกว่านี้อีก มันยังไม่พอหรอก)"
             menu:
                 "หนังยางมัดผมธรรมดา":
@@ -479,6 +480,7 @@ label start:
             hide r_fashion_glasses
             with dissolve
             show r_fashion
+            play sound 'audio/Aha.mp3' volume 0.5
             r "เธอมั่นใจแล้วหรอว่าเธอจะลอนผมหน่ะ มันทั้งร้อน ทำบ่อยๆผมก็เสีย มันไม่ดีหรอกนะเชื่อฉันสิ" #r_fashion
             hide j_interest part1
             with dissolve
@@ -530,10 +532,12 @@ label start2:
             r "ฉันถามจริง? เธอก็รู้ตารางรถเมล์ไม่ใช่หรอ"
             hide j_normal part2 with dissolve
             show j_happy part2
+            play sound "audio/girl laugh.mp3"
             j 'รู้ค่ะ'
             hide r_lookup
             with dissolve
             show r_repressed
+            play sound "audio/angry rabbit.mp3"
             r 'รถเมล์เคยมาตรงเวลาซะที่ไหนล่ะ นี่อาจจะทำให้เธอมานั่งรอรถเมล์อย่างเสียเวลาเปล่าก็ได้!!!!'
             j 'ฉันว่าฉันคงจะไม่โชคร้ายขนาดที่ว่ารอครึ่งชั่วโมงหรอกมั้งคะ'
             hide r_repressed
@@ -851,7 +855,6 @@ label start3:
             j 'ฉันเชื่อว่าอาจารย์ไม่ใจร้ายขนาดนั้นหรอกค่ะ เขามีบทบาทที่จะทำให้พวกเราเป็นคนที่ดีขึ้น เราต้องให้ใจกับเขาด้วย'#j_ralax part3
             r 'ตามใจเธอก็แล้วกัน'
             j 'ตั้งใจเรียนกันเถอะค่ะ'
-            stop sound
             $ score += 0
         'เพื่อน':
             hide r_spirit_out
@@ -969,7 +972,6 @@ label start3:
                     show r_lookup
                     j 'ไม่หรอกค่ะ ไม่แน่ฉันอาจจะขอเข้าร่วมการติวในครั้งหน้าด้วย'
                     r 'เพ้อฝันจริงๆเลยยัยเด็กคนนี้'
-                    stop sound
                     $ score += 0
                 'ตัดใจ':
                     hide r_normal
@@ -983,10 +985,10 @@ label start3:
                     $ score += 1
     #play music "audio/start label music audio.mp3" loop volume 0.25
     if score >= 1:
-        play sound "audio/label 2.mp3" fadein 7.0
         menu:
             'Toxic Level Up':
                 play sound "audio/rabbit transform.mp3" volume 0.5
+                play music "audio/label 2.mp3" fadein 7.0
                 hide r_lookup
                 hide r_swing
                 hide r_behind
@@ -1022,6 +1024,7 @@ label finish3:
     with dissolve
     show r_normal
     show j_cry part3
+    play sound "audio/girl crying.mp3"
     j 'ฉันไม่ควรบอกวามจริงกับทุกคน'# #j_cry part3
     r 'ใช่แล้วสาวน้อย ทุกคนจะปฏิบัติกับเธอแบบเดิม'
     j 'ฉันจะบอกกับทุกคนว่าฉันจะเก็บกลับไปดูกับพ่อแม่'
@@ -1066,6 +1069,7 @@ label start4:
             r 'ไหนบอกฉันหน่อยสิว่าเธอตั้งใจจะทำอะไร'
             menu:
                 'ออกกำลังกายตอนเช้า':
+                    play sound "audio/Aha.mp3"
                     hide r_normal
                     hide j_look down part4
                     hide j_relax
@@ -1091,6 +1095,7 @@ label start4:
                     r 'งั้นบอกมาสิว่าเธอจะออกกำลังกายยังไง'
                     menu:
                         'วิ่ง':
+                            play sound "audio/ara ara.mp3" volume 0.2
                             hide r_lookup
                             hide j_talk
                             with dissolve
@@ -1107,6 +1112,7 @@ label start4:
                             hide j_relax part4
                             with dissolve
                             show j_look up part4
+                            play sound "audio/ehh.mp3"
                             j 'ฉะ ฉันไม่เล่นกับพวกน้องแมวก็ได้ค่ะ'
                             hide r_spirit_out
                             with dissolve
@@ -1130,6 +1136,7 @@ label start4:
                             r 'ฉันคงบอกเธอได้แค่'
                             jump finish4
                         'เต้น':
+                            play sound "audio/ara ara.mp3" volume 0.2
                             hide j_talk part4
                             hide r_lookup
                             with dissolve
@@ -1145,6 +1152,7 @@ label start4:
                             hide j_relax part4
                             with dissolve
                             show j_look up part4
+                            play sound "audio/ehh.mp3"
                             r 'เสียงล้มของเธอจะทำให้พ่อแม่ตื่นและรีบวิ่งมาดู และพอรู้ว่าเกิดอะไรขึ้น พวกเขาจะแบนการเต้น'
                             hide r_spirit_out
                             with dissolve
@@ -1162,6 +1170,7 @@ label start4:
                             r 'ฉะนั้นแล้ว วิธีคงอิสรภาพไว้คือตั้งปลุกแบบเดิมซะ'
                             jump finish4
                         'โยคะ':
+                            play sound "audio/ara ara.mp3" volume 0.2
                             hide r_lookup
                             hide j_talk part4
                             with dissolve
@@ -1175,6 +1184,7 @@ label start4:
                             with dissolve
                             show r_shock
                             show j_look up part4
+                            play sound "audio/ehh.mp3"
                             r 'เธอเสี่ยงเป็นอัมพาตจากโยคะผิดท่า'
                             r 'โอ้ว ไหนจะตะคริวตัวร้าย'
                             r 'หรือเธออาจจะทำไม่ถูกวิธี ซึ่งนั่นทำให้การออกกำลังกายตอนเช้ามันสูญเปล่า'
@@ -1193,6 +1203,7 @@ label start4:
                             jump finish4
 
                 'กินข้าวเช้าที่โรงเรียน':
+                    play sound "audio/Aha.mp3"
                     hide r_normal
                     hide j_look down part4
                     hide j_relax part4
@@ -1231,6 +1242,7 @@ label start4:
                     jump finish4
 
                 'แค่อยากตื่นเช้า':
+                    play sound "audio/Aha.mp3"
                     hide r_normal
                     hide j_look down part4
                     hide j_relax
@@ -1245,6 +1257,7 @@ label start4:
                     r 'เมนูอะไร ทอด ต้ม นึ่งหรือย่างล่ะ'
                     menu:
                         'ขนมปังปิ้งกับไข่ดาว':
+                            play sound "audio/ara ara.mp3" volume 0.2
                             hide j_look up part4 with dissolve
                             show j_relax part4
                             j 'แค่ขนมปังปิ้งกับไข่ดาวธรรมดาก็พอแล้วค่ะ'
@@ -1269,6 +1282,7 @@ label start4:
                             hide r_shake
                             jump finish4
                         'ไข่ต้มยามเช้า':
+                            play sound "audio/ara ara.mp3" volume 0.2
                             hide j_relax part4
                             hide j_talk part4
                             with dissolve
@@ -1299,6 +1313,7 @@ label start4:
                             hide r_smile_angry
                             jump finish4
                         'มาม่า':
+                            play sound "audio/ara ara.mp3" volume 0.2
                             hide j_look up part4
                             hide j_talk part4
                             with dissolve
@@ -1311,6 +1326,7 @@ label start4:
                             r 'เอาล่ะ ฉันคงพูดได้ว่า ผู้คนมากมายป่วยเป็นโรคไตเพราะการทานมาม่า'
                             hide j_relax part4 with dissolve
                             show j_look up part4
+                            play sound "audio/ehh.mp3"
                             j 'นั่นเพราะพวกเขาทานแบบแห้งไม่ใช่หรอคะ ฉันตั้งใจจะต้มนะ'#show j_look up part4
                             r 'ใครบอกเธอแบบนั้นน่ะ'
                             j 'ผู้คนแชร์เรื่องนี้กันในโซเชียล'
@@ -1344,6 +1360,7 @@ label start4:
                             hide r_lookup
                             jump finish4
         '5.55':
+            play sound "audio/Aha.mp3"
             hide r_scaredlittle
             hide j_look down part4
             hide j_relax part4
@@ -1363,6 +1380,7 @@ label start4:
             hide r_repressed
             jump finish4
         '6.00':
+            play sound "audio/Aha.mp3"
             hide r_scaredlittle
             hide j_look down part4
             with dissolve
@@ -1380,6 +1398,7 @@ label finish4:
     show r_normal
     r 'Good night little girl'
     show j_relax part4
+    play sound "audio/girl laugh.mp3"
     j 'บางทีฉันอาจจะเปลี่ยนเป็นดึงหางเจ้ากระต่ายในฝันแทน'
     hide r_normal
     show r_scared_little 
@@ -1388,6 +1407,7 @@ label finish4:
     'กดรัน 1 ครั้งและกรุณารอสักครู่เพื่อรับชมบรรยากาศในฉากถัดไป'
     scene bg_sunrise part4 with fades
     show j_wake up part4 with dissolves
+    play sound "audio/magic.mp3"
     j 'เยี่ยมเลยค่ะ วันนี้รู้สึกเต็มอิ่มมากๆ'
     r 'ไม่นอนต่อหรอ นาฬิกายังไม่ปลุกเลยนะ'
     j 'ไม่แล้วค่ะ ตอนนี้กำลังดีมากเลย'
@@ -1395,6 +1415,8 @@ label finish4:
     j '(เดี๋ยวก่อนนะ แบบนี้มันแปลกๆแล้ว)'
     'ก๊อก..ก๊อก...'
     m 'ลูกรัก อีก 15 นาทีจะ 7 โมงแล้วนะ ยังไม่ลงมาทานข้าวอีกหรอจ๊ะ'
+    j 'อะไรนะคะ!!! อีก 15 นาทีจะ 7 โมง มะ มะ ม๊าย!!!!!!!'
+    play sound "audio/girl crying.mp3"
     show j_poor joshep part4
     with dissolve
     show smile at right
