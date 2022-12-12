@@ -887,7 +887,7 @@ label start3:
             hide r_spirit_out
             show r_j
             with dissolve
-            r '"พ่อคะแม่คะ วันนี้เกรดออกแล้ว แต่มันไม่ค่อยดีเลยค่ะ"'
+            r '"พ่อคะแม่คะ วันนี้คะแนนสอบย่อยออกแล้ว แต่มันไม่ค่อยดีเลยค่ะ"'
             hide r_j
             with dissolve
             show r_dad
