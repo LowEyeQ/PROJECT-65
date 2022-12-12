@@ -247,8 +247,9 @@ image smile:
     zoom 0.8
 
 init:
-    $ fades = Fade(1, 1, 7) # Fade to black and back.
+    $ fades = Fade(0, 0, 5) # Fade to black and back.
     $ dissolves = Dissolve(2)
+    $ dissolvess = Dissolve(0.5)
 # The game starts here.
 
     # Show a background. This uses a placeholder by default, but you can
@@ -1376,7 +1377,7 @@ label finish4:
     r 'Good night little girl'
     show j_relax part4
     j 'บางทีฉันอาจจะเปลี่ยนเป็นดึงหางเจ้ากระต่ายในฝันแทน'
-    hide j_talk part4 with dissolves
+    hide j_talk part4 with dissolvess
     scene bg_sunrise part4 with fades
     show j_wake up part4 with dissolves
     j 'เยี่ยมเลยค่ะ วันนี้รู้สึกเต็มอิ่มมากๆ'
@@ -1389,7 +1390,6 @@ label finish4:
     show j_poor joshep part4
     with dissolve
     show smile at right
-    with dissolves
     j 'อะไรนะคะ!!! อีก 15 นาทีจะ 7 โมง มะ มะ ม๊าย!!!!!!!'
     r 'ฮี่ฮี่ โทษทีนะ พึ่งนึกได้ว่าเมื่อคืนเธอลืมเสียบหัวชาร์จ'
     #The End
