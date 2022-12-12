@@ -375,7 +375,7 @@ label start:
                     hide j_interest part1
                     with dissolve
                     show j_happy part1
-                    j "โอเคฉันลอนผมเลยแล้วกัน"#show j_happy part1
+                    j "โอเคฉันลอนผมเลยแล้วกัน แล้วก็เปลี่ยนไปใส่กระโปรงอีกตัวดีกว่า"#show j_happy part1
                 "ที่รัดผมน่ารัก":
                     hide j_think v2 part1
                     with dissolve
@@ -419,7 +419,7 @@ label start:
                     hide j_interest part1
                     with dissolve
                     show j_happy part1
-                    j "โอเคฉันลอนผมเลยแล้วกัน"
+                    j "โอเคฉันลอนผมเลยแล้วกัน แล้วก็เปลี่ยนไปใส่กระโปรงอีกตัวดีกว่า"
                 "หนังยางรัดแกง":
                     hide j_think v2 part1
                     with dissolve
@@ -461,7 +461,7 @@ label start:
                     hide j_interest part1
                     with dissolve
                     show j_happy part1
-                    j "โอเคฉันลอนผมเลยแล้วกัน"
+                    j "โอเคฉันลอนผมเลยแล้วกัน แล้วก็เปลี่ยนไปใส่กระโปรงอีกตัวดีกว่า"
         "หนีบผม":
             play sound 'audio/girl laugh.mp3' volume 0.5
             hide r_lookup
@@ -508,7 +508,7 @@ label start:
             hide j_think v1 part1
             with dissolve
             show j_happy part1
-            j "ช่างเถอะ สายแล้วๆ โอเคฉันลอนผมเลยแล้วกัน"#show j_happy part1
+            j "ช่างเถอะ สายแล้วๆ โอเคฉันลอนผมเลยแล้วกัน แล้วก็เปลี่ยนไปใส่กระโปรงอีกตัวดีกว่า"#show j_happy part1
     stop music fadeout 0.5
 
 label start2:
