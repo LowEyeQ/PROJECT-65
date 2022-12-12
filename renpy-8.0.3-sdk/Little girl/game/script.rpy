@@ -840,8 +840,8 @@ label start3:
             hide r_spirit_out
             show r_normal
             with dissolve
-            r 'รู้อะไรมั๊ย คนแรกที่รู้เกรดของเธอคืออาจารย์'
-            j 'แน่นอนอยู่แล้วค่ะ เพราะเขาเป็นคนให้เกรดหนิคะ'
+            r 'รู้อะไรมั๊ย คนแรกที่รู้คะแนนของเธอคืออาจารย์'
+            j 'แน่นอนอยู่แล้วค่ะ เพราะเขาเป็นคนให้คะแนนหนิคะ'
             r 'และเขาก็จะรู้ว่า เด็กสาวคนนี้มันไม่เอาไหน'
             j 'คนเป็นอาจารย์เขาจะคิดแบบนั้นได้ยังไงล่ะคะ'
             hide r_normal
@@ -1016,7 +1016,10 @@ label start3:
                 jump finish3
     else:
         #show rabbit lose
-        #play music "audio/start label music audio.mp3" loop volume 0.25
+        # play music "audio/start label music audio.mp3" loop volume 0.25
+        stop sound
+        hide j_relax part3
+        $ renpy.movie_cutscene('images/lose.avi')
         jump start4
 label finish3:
     hide r_scared
@@ -1030,6 +1033,7 @@ label finish3:
     j 'ฉันจะบอกกับทุกคนว่าฉันจะเก็บกลับไปดูกับพ่อแม่'
     r 'นั่นดีมาก และพอกลับบ้านก็ผลัดวันไปเรื่อยๆ แน่นอนว่าจะไม่มีใครได้เห็นใบกระดาษใบนั้นอีก happy ending!!'
     j 'ฉันไม่ชอบแบบนี้เลยค่ะ'
+    $ renpy.movie_cutscene('images/win.avi')
     # This ends the game
 
 label start4:
