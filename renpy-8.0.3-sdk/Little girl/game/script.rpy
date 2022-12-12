@@ -1018,7 +1018,6 @@ label start3:
         #show rabbit lose
         # play music "audio/start label music audio.mp3" loop volume 0.25
         stop sound
-        hide j_relax part3
         $ renpy.movie_cutscene('images/lose.avi')
         jump start4
 label finish3:
