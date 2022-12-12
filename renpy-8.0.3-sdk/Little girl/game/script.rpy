@@ -247,8 +247,9 @@ image smile:
     zoom 0.8
 
 init:
-    $ fades = Fade(1, 1, 7) # Fade to black and back.
+    $ fades = Fade(0, 0, 5) # Fade to black and back.
     $ dissolves = Dissolve(2)
+    $ dissolvess = Dissolve(1)
 # The game starts here.
 
     # Show a background. This uses a placeholder by default, but you can
@@ -1071,7 +1072,7 @@ label start4:
                     with dissolve
                     show r_huh
                     show j_talk part4
-                    j 'เพื่อนๆฉันบอกว่า การออกกำลังนอกจากจะส่งผลดีต่ออสุขภาพ ยังทำให้สมองเราทำงานได้ดีขึ้นอีกด้วยนะคะ'
+                    j 'เพื่อนๆฉันบอกว่า การออกกำลังนอกจากจะส่งผลดีต่อสุขภาพ และยังทำให้สมองเราทำงานได้ดีขึ้นอีกด้วยนะคะ'
                     r 'อย่างนั้นหรอ เธอมั่นใจได้ยังไงว่าไม่ใช่แผนให้เธอไปหลับในห้องเรียนน่ะ'
                     j 'เพื่อนคนนี้เขาเรียนเก่งมากๆเลยนะคะ'
                     r 'แล้วเธอรู้ได้ยังไงว่าเพื่อนคนนั้นเรียนเก่งเพราะออกกำลังกาย'
@@ -1083,7 +1084,7 @@ label start4:
                     hide r_shock
                     with dissolve
                     show r_lookup
-                    r 'ในตายเถอะสาวน้อย เธอกำลังบอกว่าเธอเชื่อสิ่งที่อยู่ในโซเชียลอย่างนั้นหรอ'
+                    r 'ให้ตายเถอะสาวน้อย เธอกำลังบอกว่าเธอเชื่อสิ่งที่อยู่ในโซเชียลอย่างนั้นหรอ'
                     r 'เธอไม่เคยเห็นพวกคนที่แต่งชุดออกกำลังกายตามแฟชั่นบ้างหรอ แท้จริงแล้วหุ่นดีๆพวกนั้นก็มาจากยาลดความอ้วนทั้งนั้นแหละ'
                     r 'สาวน้อยอ่อนต่อโลกอย่างเธอตามเรื่องพวกนี้ไม่ทันหรอก อยากเรียนเก่งก็แค่อ่านหนังสือก็พอแล้ว เอา 120 นาทีที่เหลือไปนอนพักสมองดีกว่า'
                     j 'ออกให้ไม่เหนื่อยมากก็ได้หนิคะ'
@@ -1176,15 +1177,15 @@ label start4:
                             show j_look up part4
                             r 'เธอเสี่ยงเป็นอัมพาตจากโยคะผิดท่า'
                             r 'โอ้ว ไหนจะตะคริวตัวร้าย'
+                            r 'หรือเธออาจจะทำไม่ถูกวิธี ซึ่งนั่นทำให้การออกกำลังกายตอนเช้ามันสูญเปล่า'
                             hide r_shock
                             with dissolve
                             show r_rip
-                            r 'หรือเธออาจจะทำไม่ถูกวิธี ซึ่งนั่นทำให้การออกกำลังกายตอนเช้ามันสูญเปล่า'
                             r 'เธออาจจะตายได้เพราะไม่รู้วิธีจัดการตนเองเมื่อร่างกายเหนื่อยเกินไป'
                             hide j_look up part4
                             with dissolve
                             show j_cry part4
-                            r 'สุดท้ายนี้มันจะทำให้เธอไม่สามารถไปโรงเรียนได้ และผลการเรียนเธอก็ตกลงอีกครั้ง'
+                            r 'สุดท้ายนี้ไม่ว่ายังไงก็ตาม มันจะส่งผลต่อการเรียนของเธอ'
                             hide r_rip
                             with dissolve
                             show r_normal
@@ -1224,8 +1225,9 @@ label start4:
                     j 'ฉันรักมัมมี๊ รักแด๊ดดี๊ด้วย'#show j_cry part4
                     hide r_repressed
                     with dissolve
-                    show r_normal
+                    show r_happy
                     r 'ไว้บอกอีกทีบนโต๊ะอาหาร'
+                    hide r_happy
                     jump finish4
 
                 'แค่อยากตื่นเช้า':
@@ -1264,6 +1266,7 @@ label start4:
                             with dissolve
                             show r_shake
                             r 'เอาเป็นว่าเราจะไม่พูดถึงเรื่องนี้อีก แบบนี้ปลอดภัยกับเธอแล้ว'
+                            hide r_shake
                             jump finish4
                         'ไข่ต้มยามเช้า':
                             hide j_relax part4
@@ -1293,6 +1296,7 @@ label start4:
                             show j_cry part4
                             r 'โอ้วว ยกเลิกแผนนี้เถอะ มันเสี่ยงเกินไป เธอแค่ตั้งเวลาตามปกติแล้วนอนอย่างสบายใจก็พอแล้ว'#show j_cry part4
                             j 'ฮื่ออออ'
+                            hide r_smile_angry
                             jump finish4
                         'มาม่า':
                             hide j_look up part4
@@ -1337,6 +1341,7 @@ label start4:
                             show r_lookup
                             r 'ตั้งเวลาเดิม แล้วนอนซะ'
                             j 'ฮื่ออออ'
+                            hide r_lookup
                             jump finish4
         '5.55':
             hide r_scaredlittle
@@ -1355,7 +1360,7 @@ label start4:
             with dissolve
             show j_cry part4
             j 'ฮื่ออออ'
-            # show joseph sad face
+            hide r_repressed
             jump finish4
         '6.00':
             hide r_scaredlittle
@@ -1366,20 +1371,21 @@ label start4:
             j 'ฉันว่าตื่นเวลาเดิมน่ะดีแล้ว'
             jump finish4
 label finish4:
-    hide r_scaredlittle
-    hide r_repressed
-    hide r_lookup
-    hide r_smile_angry
-    hide r_shake
-    with dissolve
-    show r_normal with dissolve
+    # hide r_scaredlittle
+    # hide r_repressed
+    # hide r_lookup
+    # hide r_smile_angry
+    # hide r_shake
+    # # with dissolve
+    show r_normal
     r 'Good night little girl'
     show j_relax part4
     j 'บางทีฉันอาจจะเปลี่ยนเป็นดึงหางเจ้ากระต่ายในฝันแทน'
     hide r_normal
     show r_scared_little 
     hide r_scared little
-    hide j_talk part4 with dissolves
+    hide j_talk part4 with dissolvess
+    'กดรัน 1 ครั้งและกรุณารอสักครู่เพื่อรับชมบรรยากาศในฉากถัดไป'
     scene bg_sunrise part4 with fades
     show j_wake up part4 with dissolves
     j 'เยี่ยมเลยค่ะ วันนี้รู้สึกเต็มอิ่มมากๆ'
@@ -1392,7 +1398,6 @@ label finish4:
     show j_poor joshep part4
     with dissolve
     show smile at right
-    with dissolves
     j 'อะไรนะคะ!!! อีก 15 นาทีจะ 7 โมง มะ มะ ม๊าย!!!!!!!'
     r 'ฮี่ฮี่ โทษทีนะ พึ่งนึกได้ว่าเมื่อคืนเธอลืมเสียบหัวชาร์จ'
     #The End
