@@ -247,8 +247,9 @@ image smile:
     zoom 0.8
 
 init:
-    $ fades = Fade(1, 1, 7) # Fade to black and back.
+    $ fades = Fade(0, 0, 5) # Fade to black and back.
     $ dissolves = Dissolve(2)
+    $ dissolvess = Dissolve(0.5)
 # The game starts here.
 
     # Show a background. This uses a placeholder by default, but you can
@@ -772,7 +773,7 @@ label start3:
     #school
     show j_normal part3
     with zoomin
-    j 'ฟู่ว เหนื่อยแต่ก็มาทันเวลาด้วยล่ะค่ะ'#show j_normal part3
+    j 'ฟู่ว มาทันเวลาด้วยล่ะค่ะ'#show j_normal part3
     r 'เก่งมากสาวน้อย เข้าห้องเรียนกันเถอะ'
     #classroom
     scene bg_classroom_bg
@@ -1392,18 +1393,17 @@ label finish4:
     with dissolve
     show r_normal with dissolve
     r 'Good night little girl'
-    show j_talk part4 with dissolve
     show j_relax part4
     play sound "audio/girl laugh.mp3"
     j 'บางทีฉันอาจจะเปลี่ยนเป็นดึงหางเจ้ากระต่ายในฝันแทน'
-    hide j_talk part4 with dissolves
+    hide j_talk part4 with dissolvess
     scene bg_sunrise part4 with fades
     show j_wake up part4 with dissolves
     play sound "audio/magic.mp3"
     j 'เยี่ยมเลยค่ะ วันนี้รู้สึกเต็มอิ่มมากๆ'
     r 'ไม่นอนต่อหรอ นาฬิกายังไม่ปลุกเลยนะ'
     j 'ไม่แล้วค่ะ ตอนนี้กำลังดีมากเลย'
-    j 'ว่าแต่วันนี้พระอาทิตย์วันนี้ขึ้นเร็วจังเลยนะคะ'
+    j 'ว่าแต่วันนี้พระอาทิตย์ขึ้นเร็วจังเลยนะคะ'
     j '(เดี๋ยวก่อนนะ แบบนี้มันแปลกๆแล้ว)'
     'ก๊อก..ก๊อก...'
     m 'ลูกรัก อีก 15 นาทีจะ 7 โมงแล้วนะ ยังไม่ลงมาทานข้าวอีกหรอจ๊ะ'
@@ -1412,7 +1412,7 @@ label finish4:
     show j_poor joshep part4
     with dissolve
     show smile at right
-    with dissolves
+    j 'อะไรนะคะ!!! อีก 15 นาทีจะ 7 โมง มะ มะ ม๊าย!!!!!!!'
     r 'ฮี่ฮี่ โทษทีนะ พึ่งนึกได้ว่าเมื่อคืนเธอลืมเสียบหัวชาร์จ'
     #The End
     return
