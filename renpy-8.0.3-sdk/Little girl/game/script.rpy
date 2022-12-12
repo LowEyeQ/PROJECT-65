@@ -444,7 +444,7 @@ label start2:
             hide r_lookup
             with dissolve
             show r_repressed
-            play sound "audio/angry rabbit.mp3"
+            #play sound "audio/angry rabbit.mp3"
             r 'รถเมล์เคยมาตรงเวลาซะที่ไหนล่ะ นี่อาจจะทำให้เธอมานั่งรอรถเมล์อย่างเสียเวลาเปล่าก็ได้!!!!'
             j 'ฉันว่าฉันคงจะไม่โชคร้ายขนาดที่ว่ารอครึ่งชั่วโมงหรอกมั้งคะ'
             hide r_repressed
