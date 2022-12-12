@@ -1228,6 +1228,8 @@ label start4:
                     hide r_explain
                     with dissolve
                     show r_cry_little
+                    stop music
+                    play sound "audio/cry.mp3" volume 1
                     r 'แม่ของเธอจะตรอมใจเพราะคิดว่าฝีมือทำอาหารของตัวเองแย่มาก จนลูกสาวต้องรีบตื่นเช้าไปกินข้าวที่โรงเรียนแทน'
                     r 'แม่ของเธออาจจะแอบไปร้องไห้ซึ่งนั่นทำให้คุณพ่อทุกข์ใจที่ตนเองไม่สามารถทำอาหารได้อยู่แล้ว'
                     hide r_cry_little
@@ -1237,6 +1239,8 @@ label start4:
                     # น้อนร้องห้ายยยยยยยย
                     hide j look up part4
                     show j_cry part4 with dissolve
+                    stop sound fadeout 1
+                    play music "audio/start label music audio.mp3" loop volume 0.25
                     j 'ฉันรักมัมมี๊ รักแด๊ดดี๊ด้วย'#show j_cry part4
                     hide r_repressed
                     with dissolve
@@ -1405,11 +1409,13 @@ label finish4:
     play sound "audio/girl laugh.mp3"
     j 'บางทีฉันอาจจะเปลี่ยนเป็นดึงหางเจ้ากระต่ายในฝันแทน'
     hide r_normal
-    show r_scared_little 
+    show r_scared_little
     hide r_scared little
     hide j_talk part4 with dissolvess
     'กดรัน 1 ครั้งและกรุณารอสักครู่เพื่อรับชมบรรยากาศในฉากถัดไป'
+    play music "audio/crow.mp3" volume 0.8 fadein 1
     scene bg_sunrise part4 with fades
+    stop music fadeout 2
     show j_wake up part4 with dissolves
     play sound "audio/magic.mp3"
     j 'เยี่ยมเลยค่ะ วันนี้รู้สึกเต็มอิ่มมากๆ'
