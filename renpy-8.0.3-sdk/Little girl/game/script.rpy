@@ -779,9 +779,8 @@ label start3:
     scene bg_classroom_bg
     with fade
     show j_normal part3
-    with dissolve
     show r_normal
-    with dissolve
+    with zoominout
     ch chotipat 'นักเรียนจ๊ะ คะแนนสอบย่อยครั้งที่แล้วออกแล้วนะจ๊ะ'
     j 'เอ๊ะ!'
     ch 'พอครูเรียกชื่อแล้วก็ออกมารับนะจ๊ะ เด็กชายสมชาย...เด็กหญิงโฟกัส'
@@ -964,10 +963,9 @@ label start3:
             menu:
                 'พลิกวิกฤตให้เป็นโอกาส':
                     hide j_start scared part3
-                    with dissolve
+                    hide r_normal
                     show j_relax part3
                     #j_ralax part3
-                    hide r_normal
                     with dissolve
                     show r_lookup
                     j 'ไม่หรอกค่ะ ไม่แน่ฉันอาจจะขอเข้าร่วมการติวในครั้งหน้าด้วย'
@@ -975,11 +973,10 @@ label start3:
                     $ score += 0
                 'ตัดใจ':
                     hide r_normal
-                    with dissolve
-                    show r_behind
                     hide j_start scared part3
-                    with dissolve
+                    show r_behind
                     show j_scared that it ppb happend part3
+                    with dissolve
                     #j_scared that it ppb happen part3
                     r 'ดูท่าทีเหงาหงอยนั่นสิ ไม่เป็นไรนะฉันจะอยู่กับเธอเอง'
                     $ score += 1
@@ -1136,7 +1133,7 @@ label start4:
                             show r_normal
                             r 'period!'
                             j 'อะไรคือ period ล่ะคะนั่น'
-                            r 'ฉันคงบอกเธอได้แค่'
+                            r 'ฉันคงบอกเธอได้แค่นั้น'
                             jump finish4
                         'เต้น':
                             play sound "audio/ara ara.mp3" volume 0.2
