@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = _("Little girl")
+define config.name = _("The Little Girl")
 define config.mouse = { 'default' : [ ('gui/Cursor-icon.png', 0, 0)] }
 
 
@@ -24,7 +24,7 @@ define gui.show_name = True
 
 ## The version of the game.
 
-define config.version = "1.0"
+define config.version = "1"
 
 
 ## Text that is placed on the game's about screen. Place the text between the
