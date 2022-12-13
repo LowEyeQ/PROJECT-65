@@ -283,19 +283,20 @@ label start:
     with zoomin
     # with dissolve
     play sound 'audio/magic.mp3' volume 0.5
-    'กระต่ายตัวนี้เป็นความคิดในใจส่วนหนึ่งของJoseph'
+    'กระต่ายตัวนี้เป็นความคิดในใจส่วนหนึ่งของ Joseph'
     hide j_normal part1
     with dissolve
     show j_think v1 part1
-    r "นี่ เธอคิดดีแล้วหรอ ถักเปียน่ะมันทั้งยุ่งยาก แบ่งช่อก็ยาก มัดตึงมากก็ไม่ได้เพราะมันจะทำให้เธอผมร่วง" #r_explain #show j_think v.1 part1
+    r "นี่ เธอคิดดีแล้วหรอ ถักเปียน่ะมันทั้งยุ่งยาก แบ่งช่อยาก มัดตึงมากๆก็ไม่ได้เพราะมันจะทำให้ผมเธอร่วง" #r_explain #show j_think v.1 part1
     hide r_lookup
     with dissolve
     show r_explain
-    r "มัดหย่อนมากก็ไม่ดีเพราะมันหลุดง่ายแถมถ้ามัดไว้นานๆผมก็หยักอีก ไม่เป็นทรงด้วยนะเธอ"
+    r "มัดหย่อนมากก็ไม่ดีเพราะมันหลุดง่าย แถมถ้ามัดไว้นานๆผมก็หยักอีก ไม่เป็นทรงด้วยนะเธอ"
     hide j_think v1 part1
     with dissolve
     show j_shock part1
-    r "มันไม่สวย มันไม่สวยย เอาทรงอื่น!  ไม่รู้ว่าถักแล้วจะเบี้ยวรึป่าวด้วย อย่าถักเลย ทำทรงอื่นเหอะ"#show j_shock part1
+    r "มันไม่สวย มันไม่สวยย เอาทรงอื่น!  ไม่รู้ว่าถักแล้วจะเบี้ยวด้วยรึป่าว อย่าถักเลย เชื่อฉันสิ"#show j_shock part1
+    j "ถ้างั้น ผมทรงดังโงะหรือมัดจุกล่ะคะ"
     r "ถ้าเธอมัดผมดังโงะ คนอื่นเขาจะคิดว่าเธอไม่สระผมนะ แต่ถ้ามัดจุกสองข้างมันก็จะน่ารักเกินไปไม่เข้ากับชุดหรอก" #r_lookup
     hide r_explain
     with dissolve
@@ -337,12 +338,12 @@ label start:
                     hide r_fashion_glasses
                     with dissolve
                     show r_fashion
-                    r "โธ่ มันไม่วิบๆวับๆเลย ไม่ฟรุ้งฟริ้งเลยอ่ะ"
+                    r "โธ่ มันไม่วิบวับเลย ไม่ฟรุ้งฟริ้งเลยอ่ะ"
                     hide j_think v1 part1
                     with dissolve
                     show j_think v2 part1
                     r "อีกอย่างนะ เธอคิดดูสิ หนังยางธรรมดาแบบนี้มันจะทำลายสุขภาพผมเธอ ถ้ามัดไปนานๆผมมันก็จะหักงอ"# show j_think v.2 part1
-                    r "ผมของเธอจะเป็นรอย ไม่สวย ไม่งามเลย"#r_explain
+                    r "ผมของเธอจะเป็นรอย ไม่สวย ไม่งาม"#r_explain
                     hide r_fashion
                     with dissolve
                     show r_explain
@@ -351,7 +352,10 @@ label start:
                     hide j_think v2 part1
                     with dissolve
                     show j_normal part1
-                    j "แต่ยังไงก็ตามฉันว่ามัดรวบมันก็โอเคนะคะ"#show j_normal part1
+                    j "มะ..มันคงไม่ถึงขนาดนั้นหรอกมั้งคะ"
+                    j "ฉันว่า.."
+                    j "มัดรวบมันก็โอเคแล้วนะคะ"#show j_normal part1
+                    j "อีกอย่างนึงมันก็เย็นสบายด้วย"
                     hide r_explain
                     with dissolve
                     show r_shake
@@ -375,7 +379,8 @@ label start:
                     hide j_interest part1
                     with dissolve
                     show j_happy part1
-                    j "โอเคฉันลอนผมเลยแล้วกัน แล้วก็เปลี่ยนไปใส่กระโปรงอีกตัวดีกว่า"#show j_happy part1
+                    j "โอเคงั้นฉันลอนผมเลยแล้วกัน เดี๋ยวจะไม่ทัน"#show j_happy part1
+                    j "เอ๊ะ แล้วก็เปลี่ยนไปใส่กระโปรงอีกตัวดีกว่า"
                 "ที่รัดผมน่ารัก":
                     hide j_think v2 part1
                     with dissolve
@@ -419,26 +424,29 @@ label start:
                     hide j_interest part1
                     with dissolve
                     show j_happy part1
-                    j "โอเคฉันลอนผมเลยแล้วกัน แล้วก็เปลี่ยนไปใส่กระโปรงอีกตัวดีกว่า"
+                    j "โอเคงั้นฉันลอนผมเลยแล้วกัน เดี๋ยวจะไม่ทัน"#show j_happy part1
+                    j "เอ๊ะ แล้วก็เปลี่ยนไปใส่กระโปรงอีกตัวดีกว่า"
                 "หนังยางรัดแกง":
                     hide j_think v2 part1
                     with dissolve
                     show j_normal part1
-                    r "โอ้มายก้อด เธอต้องบ้าไปแล้วแน่ๆ หนังยางรัดแกงเนี่ยนะ!"#r_fashion #show j_normal part1
+                    r "โอ้มายก๊อด เธอต้องบ้าไปแล้วแน่ๆ หนังยางรัดแกงเนี่ยนะ!"#r_fashion #show j_normal part1
                     hide r_fashion_glasses
                     with dissolve
                     show r_fashion
-                    r "ขอร้องทีเถอะ ถ้าเป็นอย่างนั้นเธอทำผมทรงอื่นยังดีกว่า หนังยางรัดแกงมันคือปีศาจร้ายชัดๆ"
+                    r "ขอร้องทีเถอะ ถ้าเป็นอย่างนั้นเธอทำทรงผมอื่นยังดีซะกว่า หนังยางรัดแกงมันคือปีศาจร้ายชัดๆ"
+                    r "ปีศาจร้ายที่จะคอยกินผมของเธอ ยิ่งเธอมัดแน่นเท่าไหร่มันก็ยิ่งจะกินผมของเธอไปมากเท่านั้น!"#show j_shock part1
+                    r "การแกะผมที่มัดจากหนังยางนี้มันยากยิ่งซะกว่าการสอบ GAT PAT ซะอีก เธอต้องใช้เวลาเป็นชั่วโมงแน่เพื่อที่จะแกะมัน"
                     hide j_normal part1
                     with dissolve
                     show j_shock part1
-                    r "ปีศาจร้ายที่จะคอยกินผมของเธอ ยิ่งเธอมัดแน่นเท่าไหร่มันก็ยิ่งจะกินผมของเธอไปมากเท่านั้น!"#show j_shock part1
-                    r "การแกะผมที่มัดจากหนังยางนี้มันยากยิ่งซะกว่าการสอบ GAT PAT ซะอีก เธอต้องใช้เวลาเป็นชั่วโมงแน่เพื่อที่จะแกะมัน"
-                    j "แต่ยังไงก็ตามฉันว่ามัดรวบมันก็โอเคนะคะ"
+                    j "นะ..น่ากลัวเกินไปแล้วค่ะ"
+                    j "มันคงไม่ขนาดนั้นหรอกมั้งคะ"
+                    j "แต่ถึงยังไงฉันว่า..มัดรวบมันก็..."
                     hide r_fashion
                     with dissolve
                     show r_shake
-                    r "ไม่ ฉันไม่โอเค เธอต้องเปลี่ยนทรง"#r_shake_head
+                    r "ไม่มีแต่! ฉันไม่โอเค เธอต้องเปลี่ยนทรง"#r_shake_head
                     hide j_shock part1
                     with dissolve
                     show j_think v2 part1
@@ -461,7 +469,8 @@ label start:
                     hide j_interest part1
                     with dissolve
                     show j_happy part1
-                    j "โอเคฉันลอนผมเลยแล้วกัน แล้วก็เปลี่ยนไปใส่กระโปรงอีกตัวดีกว่า"
+                    j "โอเคงั้นฉันลอนผมเลยแล้วกัน เดี๋ยวจะไม่ทัน"#show j_happy part1
+                    j "เอ๊ะ แล้วก็เปลี่ยนไปใส่กระโปรงอีกตัวดีกว่า"
         "หนีบผม":
             play sound 'audio/girl laugh.mp3' volume 0.5
             hide r_lookup
@@ -485,15 +494,15 @@ label start:
             hide j_interest part1
             with dissolve
             show j_think v1 part1
-            j "แต่ว่ามันจะไม่มีเวลาแล้วนะ"#show j_think v.1 part1
-            hide j_think v1 part1
-            with dissolve
-            show j_normal part1
-            j "ฉันว่าทรงนี้แหละ เหมาะกับชุดแล้วก็ลุคที่สุดแล้ว"#show j_normal part1
+            j "แต่ว่ามันจะไม่มีเวลาแล้วนะคะ"#show j_think v.1 part1
             hide r_fashion
             with dissolve
             show r_swing_speed
             r "คิดสิ คิดสิ คิดสิ ทำอะไรดี ทำอะไรดี ทำอะไรดี"
+            hide j_think v1 part1
+            with dissolve
+            show j_normal part1
+            j "ฉันว่าทรงนี้แหละค่ะ เหมาะกับชุดที่สุดแล้ว"#show j_normal part1
             hide r_swing_speed
             with dissolve
             show r_fallear
@@ -766,7 +775,7 @@ label start2:
 label start3:
     play music "audio/start label music audio.mp3" loop volume 0.25
     $ score = 0
-    scene bg_school
+    scene bg_school 
     with fade
     #เพิ่มฉาก
     show r_normal
