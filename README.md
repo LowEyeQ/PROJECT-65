@@ -1,4 +1,4 @@
-# PROJECT-65
+# PROJECT-65 for education
 # sawaddeekab eiei 65070088
 # say hi 65070001 (finally coming)
 # i am 65070037
